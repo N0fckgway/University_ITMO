@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<all>
+	<Понедельник type="list">
+		<item type="dict">
+			<period type="dict">
+				<time type="str">11:40-13:10</time>
+				<even-week type="str">true</even-week>
+			</period>
+			<place type="dict">
+				<room type="str">1330</room>
+				<building type="str">Кронверкский пр., д.49, лит.А</building>
+			</place>
+			<class-info type="dict">
+				<lesson type="str">Информатика</lesson>
+				<teacher type="str">Белокон Юлия Алексеевна</teacher>
+			</class-info>
+			<lesson-format type="str">Очно</lesson-format>
+		</item>
+		<item type="dict">
+			<period type="dict">
+				<time type="str">13:30-15:00</time>
+				<even-week type="str">true</even-week>
+			</period>
+			<place type="dict">
+				<room type="str">1330</room>
+				<building type="str">Кронверкский пр., д.49, лит.А</building>
+			</place>
+			<class-info type="dict">
+				<lesson type="str">Информатика</lesson>
+				<teacher type="str">Белокон Юлия Алексеевна</teacher>
+			</class-info>
+			<lesson-format type="str">Очно</lesson-format>
+		</item>
+	</Понедельник>
+</all>

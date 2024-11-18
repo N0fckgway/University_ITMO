@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<main>
+	<Понедельник>
+		<period>
+			<time>11:40-13:10</time>
+			<even-week>true</even-week>
+		</period>
+		<place>
+			<room>1330</room>
+			<building>Кронверкский пр., д.49, лит.А</building>
+		</place>
+		<class-info>
+			<lesson>Информатика</lesson>
+			<teacher>Белокон Юлия Алексеевна</teacher>
+		</class-info>
+		<lesson-format>Очно</lesson-format>
+		<period>
+			<time>13:30-15:00</time>
+			<even-week>true</even-week>
+		</period>
+		<place>
+			<room>1330</room>
+			<building>Кронверкский пр., д.49, лит.А</building>
+		</place>
+		<class-info>
+			<lesson>Информатика</lesson>
+			<teacher>Белокон Юлия Алексеевна</teacher>
+		</class-info>
+		<lesson-format>Очно</lesson-format>
+	</Понедельник>
+</main>
