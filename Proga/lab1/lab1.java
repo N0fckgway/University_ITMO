@@ -32,29 +32,32 @@ public class lab1 {
 		}
 	System.out.println(PrintMatrix(z1));
 }
-		
 
-	
-	
+
+
+
 
 	public static double CalcElem(int zi, double x) {
         	if (zi == 4)
 		{
 			 return Math.log(Math.pow(Math.tan((Math.pow(2.0 * x, 2) - 1.0) / 4.0), 2));
-       		}		 	
+       		}
 		else if (zi == 5 || zi == 7 || zi == 8 || zi == 9 || zi == 0 || zi == 12 || zi ==  15)
 		{
        	   		return Math.cos(Math.asin(Math.pow((x - 3.0) / 14.0, 2)));
         	}
 
-        	else 
+        	else
 		{
 			return Math.pow((1 - Math.sin(Math.log(Math.acos((x - 3.0) / 14.0)))) / 2.0, 3);
 		}
 
 
        }
-		
+
 
 }
+
+
+
 
