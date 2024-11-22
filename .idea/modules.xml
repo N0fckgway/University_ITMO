@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LabProga_1sem/LabProga_1sem.iml" filepath="$PROJECT_DIR$/LabProga_1sem/LabProga_1sem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LabProga_1sem/Pokemons/Pokemons.iml" filepath="$PROJECT_DIR$/LabProga_1sem/Pokemons/Pokemons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/University_ITMO.iml" filepath="$PROJECT_DIR$/.idea/University_ITMO.iml" />
+    </modules>
+  </component>
+</project>

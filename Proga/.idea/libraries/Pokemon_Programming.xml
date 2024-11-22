@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Pokemon Programming">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lab2/lib/Pokemon Programming.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
