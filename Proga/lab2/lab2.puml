@@ -1,0 +1,155 @@
+@startuml
+skinparam linetype ortho
+package ru.ifmo.se{
+    class Pokemon
+    abstract Move
+    class SpecialMove
+    class PhysicalMove
+    class StatusMove
+}
+package pokemons{
+    class Charjabug{
+    + Charjabug(String name, int level)
+    }
+    class Grubbin{
+    + Grubbin(String name, int level)
+    }
+    class Mudbray{
+    + Mudbray(String name, int level)
+    }
+    class Mudsdale{
+    + Mudsdale(String name, int level)
+    }
+    class Stantler{
+    + Stantler(String name, int level)
+    }
+    class Vikavolt{
+    + Vikavolt(String name, int level)
+    }
+}
+
+package moves{
+    package physical{
+        class PoisonJab{
+        +PoisonJab()
+        # applyOppEffects(Pokemon def): void
+        # describe(): String
+        }
+        class RockTomb{
+        +RockTomb()
+        # applyOppEffects(Pokemon def): void
+        # describe(): String
+        }
+        class Stomp{
+        +Stomp()
+        # applyOppEffects(Pokemon def): void
+        # describe(): String
+        }
+        class XScissor{
+        +XScissor()
+        # describe(): String
+        }
+    }
+    package special{
+        class FocusBlast{
+        +FocusBlast()
+        # applyOppEffects(Pokemon def): void
+        # describe(): String
+        }
+        class ChargeBeam{
+        +ChargeBeam()
+        # applySelfEffects(Pokemon att): void
+        # describe(): String
+        }
+        class MudSlap{
+        +MudSlap()
+        # applySelfEffects(Pokemon att): void
+        # describe(): String
+        }
+    }
+    package status{
+        class Confide{
+        +Confide()
+        # applyOppEffects(Pokemon def): void
+        # describe(): String
+        }
+        class CalmMind{
+        +CalmMind()
+        # applySelfEffects(Pokemon att): void
+        # describe(): String
+        }
+        class IronDefense{
+        +IronDefense()
+        # applySelfEffects(p: Pokemon): void
+        # describe(): String
+        }
+        class ThunderWave{
+        +ThunderWave()
+        # applyOppEffects(Pokemon def): void
+        # describe(): String
+        }
+        class WorkUp{
+        +WorkUp()
+        # applySelfEffects(Pokemon att): void
+        # describe(): String
+        }
+    }
+}
+<style>
+package{
+    LineThickness 3
+}
+</style>
+ru.ifmo.se.Move <|-- ru.ifmo.se.SpecialMove
+ru.ifmo.se.Move <|-- ru.ifmo.se.PhysicalMove
+ru.ifmo.se.Move <|-- ru.ifmo.se.StatusMove
+
+<> connect1
+connect1 --[#blue] PoisonJab
+connect1 ---[#blue] RockTomb
+connect1 --[#blue] Stomp
+connect1 --[#blue] XScissor
+ru.ifmo.se.PhysicalMove <|-[thickness=2] connect1
+<> connect2
+connect2 --[#red] FocusBlast
+connect2 --[#red] ChargeBeam
+connect2 --[#red] MudSlap
+ru.ifmo.se.SpecialMove <|--[thickness=2] connect2
+<> connect3
+connect3 ---[#green] CalmMind
+connect3 ---[#green] Confide
+connect3 ---[#green] IronDefense
+connect3 ---[#green] ThunderWave
+connect3 ---[#green] WorkUp
+
+ru.ifmo.se.StatusMove <|-[thickness=2] connect3
+
+Charjabug o--- XScissor
+Charjabug o--- Confide
+Charjabug o--- IronDefense
+Grubbin o------ XScissor
+Grubbin o------ Confide
+Mudbray o------ MudSlap
+Mudbray o------ Stomp
+Mudbray o------ RockTomb
+Mudsdale o------ MudSlap
+Mudsdale o------ Stomp
+Mudsdale o------ RockTomb
+Mudsdale o------ FocusBlast
+Stantler o------ ThunderWave
+Stantler o------ WorkUp
+Stantler o------ ChargeBeam
+Stantler o------ CalmMind
+Vikavolt o------ XScissor
+Vikavolt o------ Confide
+Vikavolt o------ IronDefense
+Vikavolt o------ PoisonJab
+<> connect4
+connect4 -- Grubbin
+Grubbin -down-|> Charjabug
+Charjabug -down-|> Vikavolt
+connect4 --- Mudbray
+Mudbray -down-|> Mudsdale
+connect4 -- Stantler
+ru.ifmo.se.Pokemon <|--[thickness=2] connect4
+@enduml
