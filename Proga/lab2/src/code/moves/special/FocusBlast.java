@@ -7,6 +7,12 @@ import ru.ifmo.se.pokemon.Type;
 
 import java.lang.Math;
 
+/*
+ * Focus Blast наносит урон и с вероятностью 10% снижает специальную защиту цели на одну ступень.
+ * Статы могут быть снижены минимум на -6 ступеней каждый.
+ */
+
+
 public final class FocusBlast extends SpecialMove {
     public FocusBlast() {
         super(Type.FIGHTING, 120, 70);

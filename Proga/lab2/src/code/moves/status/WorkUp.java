@@ -5,6 +5,12 @@ import ru.ifmo.se.pokemon.Type;
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Stat;
 
+/*
+ * Work Up повышает атаку и специальную атаку пользователя на одну ступень.
+ * Статы могут быть повышены максимум на +6 ступеней каждый.
+ */
+
+
 public final class WorkUp extends StatusMove {
     public WorkUp() {
         super(Type.NORMAL, 0, 100);

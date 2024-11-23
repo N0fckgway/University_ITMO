@@ -5,6 +5,12 @@ import ru.ifmo.se.pokemon.Type;
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Stat;
 
+/*
+ * Rock Tomb наносит урон и снижает скорость цели на одну ступень.
+ * Статы могут быть снижены минимум на -6 стадий каждый.
+ */
+
+
 public final class RockTomb extends PhysicalMove {
     public RockTomb() {
         super(Type.ROCK, 60, 95);

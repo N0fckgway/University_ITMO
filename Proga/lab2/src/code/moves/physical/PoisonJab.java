@@ -7,6 +7,11 @@ import ru.ifmo.se.pokemon.PhysicalMove;
 
 import java.lang.Math;
 
+/*
+ * Poison Jab наносит урон и с вероятностью 30% отравляет цель.
+ */
+
+
 public final class PoisonJab extends PhysicalMove {
     public PoisonJab() {
         super(Type.POISON, 80, 100);
