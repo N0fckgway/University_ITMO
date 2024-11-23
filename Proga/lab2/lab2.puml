@@ -2,7 +2,7 @@
 skinparam linetype ortho
 package ru.ifmo.se{
     class Pokemon
-    abstract Move
+    abstract class Move
     class SpecialMove
     class PhysicalMove
     class StatusMove
