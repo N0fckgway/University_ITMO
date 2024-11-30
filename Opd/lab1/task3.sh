@@ -7,8 +7,11 @@ cd lab0
 #1 скопировать содержимое файла dugtrio7 в новый файл lab0/golduck5/buizeldugtrio
 cp dugtrio7 golduck5/buizeldugtrio
 
+
 #2 создать символическую ссылку c именем Copy_28 на директорию ekans2 в каталоге lab0
+
 ln -s lab0/ekans2 Copy28
+
 
 #3 cоздать жесткую ссылку для файла dugtrio7 с именем lab0/yanma0/herdierdugtrio
 
@@ -23,13 +26,16 @@ chmod u-r dugtrio7
 chmod u-rw golduck5/klink
 
 #5 cоздать символическую ссылку для файла volcarona3 с именем lab0/golduck5/buizelvolcarona
+
 ln -s volcarona3 golduck5/buizelvolcarona
 
 #6 объеденить содержимое файлов lab0/golduck5/buizel, lab0/golduck5/buizel, в новый файл lab0/volcarona3_68
+
 cat golduck5/buizel golduck5/buizel > volcarona3_68
 
 
 #7 скопировать рекурсивно директорию yanma0 в директорию lab0/yanma0/gastrodon
+
 chmod u+r yanma0/herdierdugrtrio
 cp -r yanma0 yanma0/gastrodon
 chmod u-r yanma0/herdierdugrtrio

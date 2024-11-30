@@ -1,4 +1,7 @@
 #!/bin/bash
+
+#Создание древа каталогов
+
 mkdir -p lab0/golduck5 lab0/yanma0
 cd lab0
 touch bellsprout4 dugtrio7 volcarona3
@@ -11,7 +14,9 @@ cd ..
 mkdir -p yanma0/arbok yanma0/gastrodon yanma0/murkrow; cd yanma0
 touch klinklang herdier
 cd ..
+
 #Наполнение файлов
+
 echo "Развитые способности Gluttony" >> bellsprout4
 echo -e "Тип покемона\nGROUND NONE" >> dugtrio7; cd ekans2
 echo -e "Развитые способности Serene\nGrace" >> deerling; cd ..; cd golduck5
@@ -20,7 +25,11 @@ echo -e "Тип покемона BUG\nFIRE" >> volcarona3; cd yanma0
 echo -e "Возможности Overland=1 Sky=9 Jump=1 Power=4\nIntelligence=5 Zapper=0 Sinker=0" >> klinklang
 echo -e "Возможности Overland=7\nSurface=5 Jump=3 Power=3 Intelligence=4 Tracker=0" >> herdier
 cd ..
+
+
 #2 channge root
+
+
 chmod 400 bellsprout4
 chmod 046 dugtrio7
 chmod 524 ekans2; cd ekans2
