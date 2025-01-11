@@ -14,6 +14,7 @@ import ru.ifmo.se.pokemon.Stat;
 public final class WorkUp extends StatusMove {
     public WorkUp() {
         super(Type.NORMAL, 0, 100);
+
     }
 
     @Override
@@ -26,4 +27,5 @@ public final class WorkUp extends StatusMove {
     protected String describe() {
         return "Жоска поработал";
     }
+
 }

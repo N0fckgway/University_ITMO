@@ -1,7 +1,6 @@
 package code.pokemons;
 
-import code.moves.physical.XScissor;
-import code.moves.status.Confide;
+
 import code.moves.status.IronDefense;
 import ru.ifmo.se.pokemon.Type;
 
