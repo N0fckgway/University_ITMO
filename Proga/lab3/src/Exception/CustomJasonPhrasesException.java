@@ -1,10 +1,10 @@
 package Exception;
 
 
-public class CustomCheckedException extends Exception {
+public class CustomJasonPhrasesException extends Exception {
     private final String detailMessage;
 
-    public CustomCheckedException(String detailMessage) {
+    public CustomJasonPhrasesException(String detailMessage) {
         this.detailMessage = detailMessage;
     }
 

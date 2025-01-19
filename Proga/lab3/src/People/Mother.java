@@ -1,26 +1,47 @@
 package People;
 
 import Enums.Gender;
+import Enums.StoveWear;
+import Interfaces.LookingSnake;
 import Interfaces.MotherAction;
-import Things.Pechka;
+import Things.JasonPhrases;
+import Things.Stove;
 
-public class Mother extends Persons implements MotherAction {
+public class Mother extends Persons implements MotherAction, LookingSnake {
+    private JasonPhrases jasonPhrases;
     public Mother(String name, int age, Gender gender) {
         super(name, age, gender);
     }
 
     @Override
-    public void zalezla(String words){
-        System.out.print("залезла " + words);
+    public String climb(String words){
+        return "залезла " + words;
     }
 
     @Override
-    public void pobranity(String son){
-        System.out.print("побранить сына не может: ");
+    public String scold(String son){
+        return "побранить сына не может: ";
     }
 
     @Override
-    public void otnyalsya(String words){
-        System.out.print("у нее " + words + " отнялся с испуга. ");
+    public String weaned(String words){
+        return "у нее " + words + " отнялся с испуга. ";
     }
+
+    @Override
+    public String lookingSnake(){
+        return " увидела змею, ";
+    }
+
+    public String motherInteraction(String mother) {
+        return "A " + mother + " как" + lookingSnake() + "так на " + new Stove("печку", StoveWear.NEW).getName() + " ";
+    }
+
+    @Override
+    public void personsRole(String task){
+        System.out.println("Мать заботится: " + task + ".");
+        System.out.println("Мама говорит: «Любовь и забота делают мир лучше!");
+        System.out.println(jasonPhrases.getRandomPhrase());
+    }
+
 }

@@ -7,21 +7,32 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 
-public class Listeners extends Persons implements ReceiveMessage {
-    private final ArrayList<Listeners> listeners = new ArrayList<>();
+public class Listeners implements ReceiveMessage {
+    protected ArrayList<Listeners> listeners = new ArrayList<>();
+    protected String listenerName;
+    protected int listenerAge;
+    protected Gender listenerGender;
 
-    public Listeners(String name, int age, Gender gender) {
-        super(name, age, gender);
+    public Listeners(String listenerName, int listenerAge, Gender listenerGender) {
+        this.listenerName = listenerName;
+        this.listenerAge = listenerAge;
+        this.listenerGender = listenerGender;
     }
+
+    public String getListenerName() {
+        return listenerName;
+    }
+
+
 
     public void addListener(Listeners listener) {
         listeners.add(listener);
-        System.out.println("Добавлен слушатель: " + listener.getName());
+        System.out.println("Добавлен слушатель: " + getListenerName());
     }
 
     public void removeListener(Listeners listener) {
         listeners.remove(listener);
-        System.out.println("Слушатель удален: "  + listener.getName());
+        System.out.println("Слушатель удален: "  + getListenerName());
 
     }
 
@@ -34,7 +45,7 @@ public class Listeners extends Persons implements ReceiveMessage {
 
     @Override
     public void receiveMessage(String message) {
-        System.out.println(super.getName() + " получил сообщение: " + message);
+        System.out.print(getListenerName() + " получил сообщение: " + message);
     }
 
     public int cntListener(){
@@ -44,7 +55,7 @@ public class Listeners extends Persons implements ReceiveMessage {
 
     public Listeners findListener(String name){
         for (Listeners listener: listeners){
-            if (listener.getName().equals(name.toLowerCase())){
+            if (getListenerName().equals(name.toLowerCase())){
                 return listener;
             }
         }
@@ -52,23 +63,30 @@ public class Listeners extends Persons implements ReceiveMessage {
 
     }
 
+
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
         Listeners listeners1 = (Listeners) o;
-        return Objects.equals(listeners, listeners1.listeners);
+        return listenerAge == listeners1.listenerAge &&
+                Objects.equals(listeners, listeners1.listeners) &&
+                Objects.equals(listenerName, listeners1.listenerName) &&
+                listenerGender == listeners1.listenerGender;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), listeners);
+        return Objects.hash(listeners, listenerName, listenerAge, listenerGender);
     }
 
     @Override
     public String toString() {
         return "Listeners{" +
                 "listeners=" + listeners +
+                ", listenerName='" + listenerName + '\'' +
+                ", listenerAge=" + listenerAge +
+                ", listenerGender=" + listenerGender +
                 '}';
     }
 }

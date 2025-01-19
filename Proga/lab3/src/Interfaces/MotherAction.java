@@ -1,8 +1,8 @@
 package Interfaces;
 
 public interface MotherAction {
-    void zalezla(String words);
-    void pobranity(String son);
-    void otnyalsya(String words);
+    String climb(String words);
+    String scold(String son);
+    String weaned(String words);
 
 }

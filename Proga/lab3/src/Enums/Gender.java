@@ -1,14 +1,12 @@
 package Enums;
 
 public enum Gender {
-    MALE(" "), FEMALE("a "), MIDDLE("ю "), ALL("и ");
-    private final String name;
+    MALE,
+    FEMALE;
+    private Gender gender;
 
-    Gender(String name){
-        this.name = name;
+    public Gender getGender(){
+        return gender;
     }
 
-    public String getName(){
-        return name;
-    }
 }

@@ -1,25 +1,26 @@
 package Things;
 
 
-import Enums.Gender;
 
-public abstract class Things {
-    public String name;
-    public Gender gender;
-    public Things(String name, Gender gender){
-        this.name = name;
-        this.gender = gender;
+
+public abstract class Things  {
+    private String name;
+
+
+    public Things(String name) {
+        setName(name);
     }
 
-    public String getName(){
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+    public String getName() {
         return name;
     }
 
-    public Gender getGender(){
-        return gender;
-    }
+    public abstract void use(String context);
 
-    public abstract void getTrata(String pronoun);
 
-    public abstract String prishlaPrishel();
 }

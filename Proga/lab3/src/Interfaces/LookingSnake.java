@@ -1,5 +1,5 @@
 package Interfaces;
 
-public interface Looking {
+public interface LookingSnake {
     String lookingSnake();
 }

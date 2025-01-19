@@ -1,9 +1,6 @@
 package Interfaces;
+import Exception.CustomJasonPhrasesException;
 
 public interface Pain {
-    default void pain(){
-        System.out.print("Змея кусает " + getName("Семена") + " и он орет от боли и умирает.");
-    }
-
-    String getName(String name);
+    void pain(String name) throws CustomJasonPhrasesException;
 }

@@ -1,10 +1,10 @@
 package Exception;
 
-// Непроверяемое исключение
-public class CustomUnException extends Exception {
+
+public class CustomJasonPhrasesUnException extends RuntimeException {
     private final String detailMessage;
 
-    public CustomUnException(String detailMessage) {
+    public CustomJasonPhrasesUnException(String detailMessage) {
         this.detailMessage = detailMessage;
     }
 

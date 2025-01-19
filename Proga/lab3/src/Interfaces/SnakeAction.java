@@ -1,7 +1,8 @@
 package Interfaces;
 
 public interface SnakeAction {
-    String zapolzla();
-    String svernulasy();
-    String usnula();
+    String crawlUnder();
+    String coil();
+    String sleep();
+    String snakeOut();
 }
