@@ -1,26 +1,45 @@
 package Things;
 
 
-
+import java.util.Objects;
 
 public abstract class Things  {
-    private String name;
+    private String title;
 
 
-    public Things(String name) {
-        setName(name);
+    public Things(String title) {
+        setTitle(title);
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public abstract void use(String context);
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Things things = (Things) o;
+        return Objects.equals(title, things.title);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(title);
+    }
+
+    @Override
+    public String toString() {
+        return "Things{" +
+                "title='" + title + '\'' +
+                '}';
+    }
+
+    public abstract void use();
 
 
 }

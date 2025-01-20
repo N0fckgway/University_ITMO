@@ -1,8 +1,11 @@
-package People;
+package Listeners;
 
 import Enums.Gender;
+import Enums.StoveWear;
 import Interfaces.ReceiveMessage;
+import Things.Stove;
 
+import java.lang.Math;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -36,16 +39,21 @@ public class Listeners implements ReceiveMessage {
 
     }
 
-    public void notifyListeners(String message){
+    public void messageFromListeners(String message){
         for (Listeners listener: listeners){
-            listener.receiveMessage(message);
+            listener.receiveMessage(message, new Stove("печь", StoveWear.NEW));
         }
     }
 
 
     @Override
-    public void receiveMessage(String message) {
-        System.out.print(getListenerName() + " получил сообщение: " + message);
+    public void receiveMessage(String message, Stove stove) {
+        if (Math.random() <= 0.3){
+            System.out.println(getListenerName() + " использует печку и делает отзыв по ней: ");
+            stove.use();
+        }
+        else
+            System.out.println(getListenerName() + " отправил сообщение: " + message);
     }
 
     public int cntListener(){

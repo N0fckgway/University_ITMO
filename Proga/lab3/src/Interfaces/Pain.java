@@ -1,6 +1,7 @@
 package Interfaces;
-import Exception.CustomJasonPhrasesException;
+import Exception.CustomSetDeathException;
+import People.Persons;
 
 public interface Pain {
-    void pain(String name) throws CustomJasonPhrasesException;
+    void pain(Persons person) throws CustomSetDeathException;
 }

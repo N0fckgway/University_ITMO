@@ -1,13 +1,14 @@
 package People;
 
 import java.lang.Math;
-import Exception.CustomJasonPhrasesException;
+import java.util.Objects;
+
+import Exception.CustomSetDeathException;
 import Enums.Gender;
 import Enums.StoveWear;
-import Interfaces.JasonAction;
 import Interfaces.Pain;
 import Interfaces.SnakeAction;
-import Things.JasonPhrases;
+import JasonStatham.JasonPhrases;
 import Things.Stove;
 
 public class Snake extends Persons implements Pain, SnakeAction {
@@ -21,6 +22,30 @@ public class Snake extends Persons implements Pain, SnakeAction {
         setJasonPhrases(jasonPhrases);
 
     }
+
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Snake snake = (Snake) o;
+        return Objects.equals(animal, snake.animal) && Objects.equals(jasonPhrases, snake.jasonPhrases);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), animal, jasonPhrases);
+    }
+
+    @Override
+    public String toString() {
+        return "Snake{" +
+                "animal='" + animal + '\'' +
+                ", jasonPhrases=" + jasonPhrases +
+                '}';
+    }
+
     public void setAnimal(String animal){
         this.animal = animal;
     }
@@ -35,15 +60,25 @@ public class Snake extends Persons implements Pain, SnakeAction {
 
 
     @Override
-    public void pain(String name) throws CustomJasonPhrasesException {
+    public void pain(Persons person) throws CustomSetDeathException {
         if (Math.random() <= 0.2) {
             personsRole("и смотрит на темщика");
-            System.out.println("Змея кусает " + name + ", и он орет от боли и умирает. История закончена");
+            System.out.println("Змея кусает " + person.getName() + "a" + ", и он орет от боли и умирает. История закончена");
+            person.setDeath();
             System.out.println(jasonPhrases.getRandomPhrase());
             System.exit(0);
-
-        } else {
+        }
+        else {
             System.out.print("Я не простая " + getAnimal() + ", a я " + getAnimal() + " " + getName() + ". ");
+        }
+        try{
+            isDeath();
+        }
+        catch (CustomSetDeathException e){
+            personsRole("и смотрит на темщика");
+            System.out.println("Змея кусает " + person.getName() + "a" + ", и он орет от боли и умирает. История закончена");
+            System.out.println(jasonPhrases.getRandomPhrase());
+            System.exit(0);
         }
     }
 
@@ -69,17 +104,12 @@ public class Snake extends Persons implements Pain, SnakeAction {
 
     public String snakeChill() {
         return "Змея же " + getName() + " " + crawlUnder() +
-                new Stove("печку", StoveWear.NEW).getName() + ", " + coil() + sleep() + ".";
+                new Stove("печку", StoveWear.NEW).getTitle() + ", " + coil() + sleep() + ".";
     }
     @Override
-    public void personsRole(String task) throws CustomJasonPhrasesException {
-        if (jasonPhrases == null){
-            throw new CustomJasonPhrasesException("JasonPhrases не инициализирован для объекта Snake.");
-        }
+    public void personsRole(String task) {
         System.out.println("Змея пробирается сквозь него: " + task + ".");
         System.out.println("Змея говорит: «Ща как кусну, темщик проклятый».");
-
-
     }
 
 

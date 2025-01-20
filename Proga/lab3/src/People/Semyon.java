@@ -5,10 +5,10 @@ import java.lang.Math;
 import Enums.Gender;
 import Interfaces.RegretIt;
 import Interfaces.SemyonCame;
-import Things.JasonPhrases;
+import JasonStatham.JasonPhrases;
 
 public class Semyon extends Persons implements RegretIt, SemyonCame {
-    private JasonPhrases jasonPhrases;
+
 
     public Semyon(String name, int age, Gender gender) {
         super(name, age, gender);
@@ -30,10 +30,10 @@ public class Semyon extends Persons implements RegretIt, SemyonCame {
         System.out.println("Семен исследует новую темку: " + task + ".");
         if (Math.random() <= 0.5) {
             System.out.println("Семен находит лютую темку");
-            System.out.println(jasonPhrases.getRandomPhrase());
+
         } else {
             System.out.println("Семен понял, что темка не дает выхлопа");
-            System.out.println(jasonPhrases.getRandomPhrase());
+
         }
 
     }

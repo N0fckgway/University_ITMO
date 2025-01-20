@@ -2,10 +2,10 @@ package People;
 
 import Enums.Gender;
 import Interfaces.GetThanks;
-import Things.JasonPhrases;
+import JasonStatham.JasonPhrases;
 
 public class Father extends Persons implements GetThanks {
-    private JasonPhrases jasonPhrases;
+
     public Father(String name, int age, Gender gender){
         super(name, age, gender);
     }
@@ -26,7 +26,7 @@ public class Father extends Persons implements GetThanks {
     public void personsRole(String task){
         System.out.println("Отец работает: " + task + ".");
         System.out.println("Отец говорит: «Упорный труд - ключ к успеху!»");
-        System.out.println(jasonPhrases.getRandomPhrase());
+
     }
 
 

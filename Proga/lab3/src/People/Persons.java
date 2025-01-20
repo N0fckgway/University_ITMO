@@ -1,14 +1,14 @@
 package People;
 
 import Enums.Gender;
-import Interfaces.DeadCame;
-
+import Exception.CustomSetDeathException;
 import java.util.Objects;
 
 public abstract class Persons {
     private String name;
     private int age;
     private Gender gender;
+    private boolean isDeath = false;
 
 
     public Persons(String name, int age, Gender gender) {
@@ -48,6 +48,15 @@ public abstract class Persons {
 
     public abstract void personsRole(String task) throws Exception;
 
+    public void isDeath() throws CustomSetDeathException {
+        if (isDeath){
+            throw new CustomSetDeathException("он умер");
+        }
+    }
+
+    public void setDeath() {
+        isDeath = true;
+    }
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
@@ -72,10 +81,5 @@ public abstract class Persons {
 
     }
 
-    public record PersonsDescribe(String name, int age, Gender gender) {
-        @Override
-        public String toString() {
-            return name + ", " + age + " лет, " + gender.getGender();
-        }
-    }
+
 }

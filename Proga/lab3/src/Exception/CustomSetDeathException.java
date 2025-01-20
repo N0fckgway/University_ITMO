@@ -1,10 +1,10 @@
 package Exception;
 
 
-public class CustomJasonPhrasesException extends Exception {
+public class CustomSetDeathException extends Exception {
     private final String detailMessage;
 
-    public CustomJasonPhrasesException(String detailMessage) {
+    public CustomSetDeathException(String detailMessage) {
         this.detailMessage = detailMessage;
     }
 

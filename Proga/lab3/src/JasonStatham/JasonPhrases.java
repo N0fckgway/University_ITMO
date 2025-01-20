@@ -1,4 +1,4 @@
-package Things;
+package JasonStatham;
 
 import Enums.Phrases;
 import Interfaces.JasonAction;
@@ -20,12 +20,6 @@ public class JasonPhrases implements JasonAction {
         Random rand = new Random();
         int index = rand.nextInt(phrases.length);
         return phrases[index];
-    }
-    @Override
-    public void printPhrases(){
-        for (String phrases1: phrases){
-            System.out.println(phrases1);
-        }
     }
 
 }
