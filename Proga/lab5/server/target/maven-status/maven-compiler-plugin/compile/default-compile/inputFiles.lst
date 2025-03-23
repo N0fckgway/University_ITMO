@@ -1,0 +1,16 @@
+/Users/n0fckgway/Desktop/University_ITMO/Proga/lab5/server/src/main/java/ru/suvorov/server/collection/CollectionManager.java
+/Users/n0fckgway/Desktop/University_ITMO/Proga/lab5/server/src/main/java/ru/suvorov/server/builder/BuilderCity.java
+/Users/n0fckgway/Desktop/University_ITMO/Proga/lab5/server/src/main/java/ru/suvorov/server/builder/ConcreateHumanBuilder.java
+/Users/n0fckgway/Desktop/University_ITMO/Proga/lab5/server/src/main/java/ru/suvorov/server/collection/enums/Government.java
+/Users/n0fckgway/Desktop/University_ITMO/Proga/lab5/server/src/main/java/ru/suvorov/server/builder/BuilderCoordinates.java
+/Users/n0fckgway/Desktop/University_ITMO/Proga/lab5/server/src/main/java/ru/suvorov/server/builder/DirectorBuilder.java
+/Users/n0fckgway/Desktop/University_ITMO/Proga/lab5/server/src/main/java/ru/suvorov/server/collection/model/Coordinates.java
+/Users/n0fckgway/Desktop/University_ITMO/Proga/lab5/server/src/main/java/ru/suvorov/server/collection/enums/Climate.java
+/Users/n0fckgway/Desktop/University_ITMO/Proga/lab5/server/src/main/java/ru/suvorov/server/builder/BuilderHuman.java
+/Users/n0fckgway/Desktop/University_ITMO/Proga/lab5/server/src/main/java/ru/suvorov/server/collection/enums/StandardOfLiving.java
+/Users/n0fckgway/Desktop/University_ITMO/Proga/lab5/server/src/main/java/ru/suvorov/server/collection/model/CollectionElement.java
+/Users/n0fckgway/Desktop/University_ITMO/Proga/lab5/server/src/main/java/ru/suvorov/server/builder/ConcreteCityBuilder.java
+/Users/n0fckgway/Desktop/University_ITMO/Proga/lab5/server/src/main/java/ru/suvorov/server/builder/ConcreateCoordinatesBuilder.java
+/Users/n0fckgway/Desktop/University_ITMO/Proga/lab5/server/src/main/java/ru/suvorov/server/collection/model/City.java
+/Users/n0fckgway/Desktop/University_ITMO/Proga/lab5/server/src/main/java/ru/suvorov/server/collection/model/Human.java
+/Users/n0fckgway/Desktop/University_ITMO/Proga/lab5/server/src/main/java/ru/suvorov/server/Server.java
