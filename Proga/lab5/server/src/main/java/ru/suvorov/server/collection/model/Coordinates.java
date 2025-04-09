@@ -4,8 +4,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import ru.suvorov.common.exception.InvalidDataException;
-import ru.suvorov.common.util.Validtable;
+import ru.suvorov.server.exception.InvalidDataException;
+import ru.suvorov.server.util.Validtable;
 
 @Setter
 @Getter
@@ -22,10 +22,17 @@ public class Coordinates implements Validtable {
 
     @Override
     public void validate() throws InvalidDataException {
-        if (y == null || y > -583) {
+        if (y == null || y < -583) {
             throw new InvalidDataException(this, "Invalid coordinate y or coordinate y not in set");
         }
 
     }
 
+    @Override
+    public String toString() {
+        return "Coordinates{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
 }

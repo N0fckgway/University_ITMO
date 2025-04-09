@@ -29,7 +29,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>${project.groupId}.server.Server</mainClass>
+							<mainClass>ru.suvorov.server.Server</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>
@@ -57,17 +57,18 @@
 			<version>1.18.30</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>ru.suvorov</groupId>
-			<artifactId>common</artifactId>
-			<version>1.0-SNAPSHOT</version>
-			<scope>compile</scope>
-		</dependency>
+
 		<dependency>
 			<groupId>com.github.javafaker</groupId>
 			<artifactId>javafaker</artifactId>
 			<version>1.0.2</version>
 		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.10.1</version>
+		</dependency>
+
 	</dependencies>
 
 </project>

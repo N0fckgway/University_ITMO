@@ -11,7 +11,7 @@ public interface BuilderCity {
     BuilderCity setId();
     BuilderCity setName(String name);
     BuilderCity setCoordinates(Coordinates coordinates);
-    BuilderCity setCreationDate(java.time.ZonedDateTime creationDate);
+    BuilderCity setCreationDate();
     BuilderCity setArea(Integer area);
     BuilderCity setPopulation(long population);
     BuilderCity setMetersAboveSeaLevel(double metersAboveSeaLevel);

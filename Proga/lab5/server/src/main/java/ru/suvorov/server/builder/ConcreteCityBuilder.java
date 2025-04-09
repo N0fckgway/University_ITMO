@@ -30,7 +30,7 @@ public class ConcreteCityBuilder implements BuilderCity {
     @Override
     public BuilderCity setId() {
         City city = getResult();
-        city.setId();
+        this.id = city.setId();
         return this;
 
     }
@@ -49,8 +49,9 @@ public class ConcreteCityBuilder implements BuilderCity {
     }
 
     @Override
-    public BuilderCity setCreationDate(java.time.ZonedDateTime creationDate) {
-        this.creationDate = creationDate;
+    public BuilderCity setCreationDate() {
+        City city = getResult();
+        this.creationDate = city.setDate();
         return this;
 
     }

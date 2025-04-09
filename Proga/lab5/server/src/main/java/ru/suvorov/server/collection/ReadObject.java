@@ -1,8 +1,8 @@
 package ru.suvorov.server.collection;
 
-import ru.suvorov.common.exception.InvalidDataException;
-import ru.suvorov.common.util.CollectionElement;
-import ru.suvorov.common.util.Console;
+import ru.suvorov.server.exception.InvalidDataException;
+import ru.suvorov.server.util.CollectionElement;
+import ru.suvorov.server.util.Console;
 
 import ru.suvorov.server.collection.enums.Climate;
 import ru.suvorov.server.collection.enums.Government;
@@ -73,7 +73,7 @@ public class ReadObject {
                 try {
                     return Long.parseLong(input);
                 } catch (NumberFormatException e) {
-                    console.printError("Неверный формат числа");
+                    console.printError("Неверный формат числа\n");
                 }
             }
         }
@@ -88,7 +88,7 @@ public class ReadObject {
                 try {
                     return Double.parseDouble(input);
                 } catch (NumberFormatException e) {
-                    console.printError("Неверный формат числа");
+                    console.printError("Неверный формат числа\n");
                 }
             }
         }
@@ -103,7 +103,7 @@ public class ReadObject {
             try {
                 return ZonedDateTime.parse(input, DateTimeFormatter.ISO_DATE_TIME);
             } catch (DateTimeParseException e) {
-                console.printError("Неверный формат даты");
+                console.printError("Неверный формат даты\n");
             }
         }
     }
@@ -112,10 +112,10 @@ public class ReadObject {
         try {
             long x = readPopulation(console, "Coordinate x: ");
             long y = readPopulation(console, "Coordinate y: ");
-            if (y > -583) throw new InvalidDataException(y, "Координата y неверно указана");
+            if (y < -583) throw new InvalidDataException(y, "Координата y неверно указана\n");
             return new Coordinates(x, y);
         } catch (IllegalStateException | NoSuchElementException e) {
-            console.printError("Ошибка чтения");
+            console.printError("Ошибка чтения\n");
             return null;
         }
     }
@@ -145,12 +145,12 @@ public class ReadObject {
                     try {
                         return Climate.valueOf(input);
                     } catch (IllegalArgumentException e) {
-                        console.printError("Неверный тип климата");
+                        console.printError("Неверный тип климата\n");
                     }
                 }
             }
         } catch (IllegalStateException | NoSuchElementException e) {
-            console.printError("Ошибка чтения");
+            console.printError("Ошибка чтения\n");
             return null;
         }
     }
@@ -165,7 +165,7 @@ public class ReadObject {
                     try {
                         return Government.valueOf(input);
                     } catch (IllegalArgumentException e) {
-                        console.printError("Неверный тип правительства");
+                        console.printError("Неверный тип правительства\n");
                     }
                 }
             }
@@ -185,12 +185,12 @@ public class ReadObject {
                     try {
                         return StandardOfLiving.valueOf(input);
                     } catch (IllegalArgumentException e) {
-                        console.printError("Неверный уровень жизни");
+                        console.printError("Неверный уровень жизни\n");
                     }
                 }
             }
         } catch (IllegalStateException | NoSuchElementException e) {
-            console.printError("Ошибка чтения");
+            console.printError("Ошибка чтения\n");
             return null;
         }
     }

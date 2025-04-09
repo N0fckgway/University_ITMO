@@ -2,12 +2,12 @@ package ru.suvorov.server.collection.model;
 
 
 import com.github.javafaker.Faker;
-import ru.suvorov.common.exception.InvalidDataException;
+import ru.suvorov.server.exception.InvalidDataException;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import ru.suvorov.common.util.CollectionElement;
-import ru.suvorov.common.util.Validtable;
+import ru.suvorov.server.util.CollectionElement;
+import ru.suvorov.server.util.Validtable;
 import ru.suvorov.server.collection.enums.Climate;
 import ru.suvorov.server.collection.enums.Government;
 import ru.suvorov.server.collection.enums.StandardOfLiving;
@@ -20,9 +20,8 @@ import java.util.UUID;
 
 @ToString
 @Setter
-@Getter
 public class City extends CollectionElement implements Validtable, Serializable {
-    private long id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
+   //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
     private Coordinates coordinates; //Поле не может быть null
     private java.time.ZonedDateTime creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
@@ -35,10 +34,10 @@ public class City extends CollectionElement implements Validtable, Serializable 
     private Human governor; //Поле может быть null
 
     public City(long id, String name, Coordinates coordinates, ZonedDateTime creationDate, Integer area, long population, double metersAboveSeaLevel, Climate climate, Government government, StandardOfLiving standardOfLiving, Human governor) {
-        this.id = getId();
+        this.id = setId();
         this.name = name;
         this.coordinates = coordinates;
-        this.creationDate = creationDate;
+        this.creationDate = setDate();
         this.area = area;
         this.population = population;
         this.metersAboveSeaLevel = metersAboveSeaLevel;
@@ -49,10 +48,21 @@ public class City extends CollectionElement implements Validtable, Serializable 
 
     }
 
+    public City() {
+
+    }
+
+    public Human getGovernor() {
+        return governor;
+    }
+
+    public double getMetersAboveSeaLevel() {
+        return metersAboveSeaLevel;
+    }
 
     @Override
     public void validate() throws InvalidDataException {
-        if (id <= 0) {
+        if (setId() <= 0) {
             throw new InvalidDataException(this, "Invalid ID");
         }
         if (name == null || name.isEmpty()) {
@@ -84,15 +94,43 @@ public class City extends CollectionElement implements Validtable, Serializable 
     @Override
     public ZonedDateTime setDate() {
         Faker faker = new Faker();
-        Date randomDate = faker.date().birthday(-10000, 10000);
+        Date randomDate = faker.date().birthday(18, 100);
         ZonedDateTime dateTime = ZonedDateTime.ofInstant(randomDate.toInstant(), ZoneId.systemDefault());
+
+        if (dateTime.isAfter(ZonedDateTime.now())) {
+            throw new InvalidDataException(this, "Дата создания города не может быть в будущем\n");
+        }
         return dateTime;
     }
+
+    /**
+     * @return
+     */
+    @Override
+    public Long getId() {
+        return id;
+    }
+
 
     @Override
     public int compareTo(CollectionElement element) {
         return Long.compare(this.id, element.getId());
     }
 
-
+    @Override
+    public String toString() {
+        return "City{" +
+                "id='" + id + '\'' +
+                "name='" + name + '\'' +
+                ", coordinates=" + coordinates +
+                ", creationDate=" + creationDate +
+                ", area=" + area +
+                ", population=" + population +
+                ", metersAboveSeaLevel=" + metersAboveSeaLevel +
+                ", climate=" + climate +
+                ", government=" + government +
+                ", standardOfLiving=" + standardOfLiving +
+                ", governor=" + governor +
+                '}';
+    }
 }
