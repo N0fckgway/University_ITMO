@@ -1,19 +1,23 @@
+# IntelliJ IDEA
 .idea/
+
+# Временные файлы и папки, связанные с компиляцией
 .out/
 *.iml
-# Compiled class file
+
+# Скомпилированные файлы классов
 *.class
 
-# Log file
+# Логи
 *.log
 
-# BlueJ files
+# Файлы BlueJ
 *.ctxt
 
-# Mobile Tools for Java (J2ME)
+# Временные файлы для мобильных инструментов Java (J2ME)
 .mtj.tmp/
 
-# Package Files #
+# Архивы и пакеты
 *.jar
 *.war
 *.nar
@@ -21,13 +25,14 @@
 *.zip
 *.tar.gz
 *.rar
+
+# Конфигурационные файлы и текстовые файлы, которые не нужны в репозитории
 *.json
 *.txt
 
-
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# Логи ошибок виртуальной машины
 hs_err_pid*
 replay_pid*
-.DS_Store
 
+# Файлы системы
+.DS_Store
