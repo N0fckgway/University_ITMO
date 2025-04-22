@@ -9,6 +9,7 @@ import ru.suvorov.server.commands.interfaces.Executable;
 import ru.suvorov.server.managers.CollectionManager;
 import ru.suvorov.server.managers.Command;
 import ru.suvorov.server.managers.DumpManager;
+import ru.suvorov.server.managers.Runner;
 import ru.suvorov.server.util.CollectionElement;
 import ru.suvorov.server.util.CommandManager;
 import ru.suvorov.server.util.Console;
@@ -35,6 +36,7 @@ public class Help extends Command implements Executable {
     public ExecutionResponse apply(String arg) {
         StringBuilder helpMessage = new StringBuilder();
         helpMessage.append("Доступные команды:\n");
+
         ConcreteCityBuilder concreteCityBuilder = new ConcreteCityBuilder();
         ConcreateHumanBuilder concreateHumanBuilder = new ConcreateHumanBuilder();
         ConcreateCoordinatesBuilder concreateCoordinatesBuilder = new ConcreateCoordinatesBuilder();
@@ -42,7 +44,7 @@ public class Help extends Command implements Executable {
         command.register("add_if_min", new AddIfMin(console, collectionManager, collectionElement));
         command.register("clear", new Clear(collectionManager));
         command.register("exit", new Exit());
-        command.register("execute_script", new ExecuteScript(console)); // передаём Runner
+        command.register("execute_script", new ExecuteScript(console, new Runner()));
         command.register("filter_less_than_governor", new FilterLessThanGovernor(console, collectionManager));
         command.register("generate_random_obj", new GenerateRandomObj(collectionManager, concreateCoordinatesBuilder, concreteCityBuilder, concreateHumanBuilder));
         command.register("info", new Info(console, collectionManager));

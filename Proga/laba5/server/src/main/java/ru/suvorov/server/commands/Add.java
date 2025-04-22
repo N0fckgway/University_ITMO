@@ -25,7 +25,7 @@ public class Add extends Command implements Executable {
     }
 
     @Override
-    public ExecutionResponse apply(String arg) throws Exception {
+    public ExecutionResponse apply(String arg) {
         try {
             if (!arg.isEmpty())
                 return new ExecutionResponse(false, "Неверное кол-во аргументов!\nИспользование: " + getName());
@@ -37,7 +37,7 @@ public class Add extends Command implements Executable {
                 return new ExecutionResponse("Город добавлен!");
             } else
                 return new ExecutionResponse(false, "Поля города невалидны! Город не в кондициях чтобы создаться! Надо что-то делать");
-        } catch (NumberFormatException e) {
+        } catch (Exception e) {
             return new ExecutionResponse(false, "Отмена создания города!");
         }
 

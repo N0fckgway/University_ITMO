@@ -126,8 +126,8 @@ public class ReadObject {
             int age = readArea(console, "Human.Age: ");
             float height = (float) readMetersAboveSeaLevel(console, "Human.height: ");
             ZonedDateTime birthday = readCreationDate(console, "Human.birth: Example: 2025-12-25T00:00:00+03:00[Europe/Moscow] (or 'exit' to quit): ");
-            if (age > 0) throw new InvalidDataException(age, "Возраст > 0");
-            if (height > 0) throw new InvalidDataException(height, "Рост > 0");
+            if (age < 0) throw new InvalidDataException(age, "Возраст > 0");
+            if (height < 0) throw new InvalidDataException(height, "Рост > 0");
             return new Human(name, age, height, birthday);
         } catch (IllegalStateException | NoSuchElementException e) {
             console.printError("Ошибка чтения");
@@ -138,7 +138,9 @@ public class ReadObject {
     public static Climate readClimate(Console console) throws Exception {
         try {
             while (true) {
-                console.print("Climate:  ");
+                console.print("Climate:  (RAIN_FOREST," +
+                        "    MONSOON," +
+                        "    HUMIDSUBTROPICAL)\n");
                 String input = console.readln().trim();
                 if (input.equals("exit")) throw new Exception();
                 if (!input.isEmpty()) {
@@ -158,7 +160,10 @@ public class ReadObject {
     public static Government readGovernment(Console console) throws Exception {
         try {
             while (true) {
-                console.print("Government: ");
+                console.print("Government: KLEPTOCRACY," +
+                        "    PLUTOCRACY," +
+                        "    REPUBLIC," +
+                        "    TIMOCRACY\n");
                 String input = console.readln().trim();
                 if (input.equals("exit")) throw new Exception();
                 if (!input.isEmpty()) {
@@ -178,7 +183,10 @@ public class ReadObject {
     public static StandardOfLiving readStandardOfLiving(Console console) throws Exception {
         try {
             while (true) {
-                console.print("StandardOfLiving: ");
+                console.print("(StandardOfLiving: HIGH," +
+                        "    LOW," +
+                        "    VERY_LOW," +
+                        "    ULTRA_LOW\n)");
                 String input = console.readln().trim();
                 if (input.equals("exit")) throw new Exception();
                 if (!input.isEmpty()) {

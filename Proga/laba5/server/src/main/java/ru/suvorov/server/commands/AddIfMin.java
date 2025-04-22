@@ -29,7 +29,7 @@ public class AddIfMin extends Command implements Executable {
 
 
     @Override
-    public ExecutionResponse apply(String arg) throws Exception {
+    public ExecutionResponse apply(String arg)  {
         if (arg == null || arg.isEmpty()) {
             return new ExecutionResponse(false, "Не указан элемент для добавления");
         }

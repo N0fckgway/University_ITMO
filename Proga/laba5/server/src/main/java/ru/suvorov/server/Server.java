@@ -28,28 +28,8 @@ public final class Server {
         }
 
 
-//
-//        command.register("info", new Info(console, collectionManager));
-//        command.register("show", new Show(console, collectionManager))
-//        command.register("update id", new UpdateId(console, collectionManager, collectionElement));
-//        command.register("remove_by_id", new RemoveById(console, collectionManager));
-//        command.register("clear", new Clear(collectionManager));
-//        command.register("save", new Save(collectionManager));
-//        command.register("execute_script", new ExecuteScript(console));
-//        command.register("exit", new Exit());
-//        command.register("remove_first", new RemoveFirst(collectionManager));
-//        command.register("add_if_min", new AddIfMin(console, collectionManager, collectionElement));
-//        command.register("remove_greater", new RemoveGreater(console, collectionManager, collectionElement));
-//        command.register("sum_of_meters_above_sea_level", new SumOfMetersAboveSeaLevel(collectionManager));
-//        command.register("filter_less_than_governor", new FilterLessThanGovernor(console, collectionManager));
-//        command.register("print_ascending", new PrintAscending(console, collectionManager));
-//        command.register("generate", new GenerateRandomObj(collectionManager, new ConcreateCoordinatesBuilder(), new ConcreteCityBuilder(), new ConcreateHumanBuilder()));
-//
-
-
         Runner runner = new Runner(console, collectionManager, collectionElement);
         runner.run();
-
 
 
     }

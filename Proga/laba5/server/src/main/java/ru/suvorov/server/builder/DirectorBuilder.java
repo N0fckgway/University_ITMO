@@ -1,9 +1,9 @@
 package ru.suvorov.server.builder;
 
-
 import ru.suvorov.server.collection.enums.Climate;
 import ru.suvorov.server.collection.enums.Government;
 import ru.suvorov.server.collection.enums.StandardOfLiving;
+import ru.suvorov.server.collection.model.City;
 import ru.suvorov.server.collection.model.Coordinates;
 import ru.suvorov.server.collection.model.Human;
 import ru.suvorov.server.util.CollectionElement;
@@ -27,7 +27,7 @@ public final class DirectorBuilder {
         builderCity.setGovernment(Government.PLUTOCRACY);
         builderCity.setStandardOfLiving(StandardOfLiving.LOW);
         builderCity.setGovernor(new Human("Станислав", 19, 172, ZonedDateTime.now()));
-        CollectionElement result = builderCity.getResult();
+        City result = builderCity.getResult();
         result.validate();
         return result;
     }
@@ -47,7 +47,5 @@ public final class DirectorBuilder {
         builderCoordinates.getCoordinates().validate();
         builderCoordinates.getCoordinates();
     }
-
-
 
 }

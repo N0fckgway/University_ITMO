@@ -19,12 +19,7 @@ public class SumOfMetersAboveSeaLevel extends Command implements Executable {
     }
 
     @Override
-    public ExecutionResponse apply(String arg) throws Exception {
-        if (arg == null || arg.isEmpty()) {
-            return new ExecutionResponse(false, "Не указан элемент для удаления");
-
-        }
-
+    public ExecutionResponse apply(String arg) {
         if (collectionManager.getCollection() == null || collectionManager.getCollection().isEmpty()) {
             return new ExecutionResponse(false, "Коллекция пуста или удаление невозможно");
 

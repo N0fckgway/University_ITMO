@@ -9,17 +9,18 @@ import ru.suvorov.server.commands.interfaces.Executable;
 import ru.suvorov.server.util.CollectionElement;
 import ru.suvorov.server.util.CommandManager;
 import ru.suvorov.server.util.Console;
-import ru.suvorov.server.managers.CollectionManager;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class Runner {
     private final Map<String, Executable> commands = new HashMap<>();
-    private final Console console;
-    private final CollectionManager collectionManager;
-    private final CollectionElement collectionElement;
+    private Console console;
+    private CollectionManager collectionManager;
+    private CollectionElement collectionElement;
     private final Set<String> scriptStack = new HashSet<>();
 
     public Runner(Console console, CollectionManager collectionManager, CollectionElement collectionElement) {
@@ -29,16 +30,23 @@ public class Runner {
         registerCommands();
     }
 
+    public Runner() {
+
+    }
+
+
+
     private void registerCommands() {
+        CommandManager commandManager = new CommandManager();
+        ConcreateHumanBuilder concreateHumanBuilder = new ConcreateHumanBuilder();
         ConcreteCityBuilder concreteCityBuilder = new ConcreteCityBuilder();
         ConcreateCoordinatesBuilder concreateCoordinatesBuilder = new ConcreateCoordinatesBuilder();
-        ConcreateHumanBuilder concreateHumanBuilder = new ConcreateHumanBuilder();
-        CommandManager commandManager = new CommandManager();
+
         commands.put("add", new Add(console, collectionManager, collectionElement));
         commands.put("add_if_min", new AddIfMin(console, collectionManager, collectionElement));
         commands.put("clear", new Clear(collectionManager));
         commands.put("exit", new Exit());
-        commands.put("execute_script", new ExecuteScript(console)); // передаём Runner
+        commands.put("execute_script", new ExecuteScript(console, this));
         commands.put("filter_less_than_governor", new FilterLessThanGovernor(console, collectionManager));
         commands.put("generate_random_obj", new GenerateRandomObj(collectionManager, concreateCoordinatesBuilder, concreteCityBuilder, concreateHumanBuilder));
         commands.put("help", new Help(console, commandManager, collectionManager, collectionElement));
@@ -52,6 +60,7 @@ public class Runner {
         commands.put("sum_of_meters_above_sea_level", new SumOfMetersAboveSeaLevel(collectionManager));
         commands.put("update_id", new UpdateId(console, collectionManager, collectionElement));
     }
+
 
     public void run() {
         console.println("Введите команду:");
@@ -85,24 +94,72 @@ public class Runner {
         }
     }
 
-    public void executeScriptFromFile(String fileName) {
-        if (scriptStack.contains(fileName)) {
-            console.println("Скрипт уже выполняется (рекурсия): " + fileName);
-            return;
+    private boolean checkRecursion(String filename) {
+        if (scriptStack.contains(filename)) {
+            return true;
+        } else {
+            scriptStack.add(filename);
+            return false;
+        }
+    }
+
+    public ExecutionResponse scriptMode(String argument) {
+        String[] userCommand;
+        StringBuilder executionOutput = new StringBuilder();
+
+        if (!new File(argument).exists()) return new ExecutionResponse(false, "Файл не существует!");
+        if (!Files.isReadable(Paths.get(argument))) return new ExecutionResponse(false, "Нет прав на чтение файла!");
+
+        if (checkRecursion(argument)) {
+            return new ExecutionResponse(false, "Рекурсивный вызов скрипта: " + argument);
         }
 
-        File file = new File(fileName);
-        if (!file.exists()) {
-            console.println("Файл не найден: " + fileName);
-            return;
-        }
+        try (Scanner scriptScanner = new Scanner(new File(argument))) {
+            if (!scriptScanner.hasNext()) throw new NoSuchElementException();
+            console.selectFileScanner(scriptScanner);
 
-        try (Scanner fileScanner = new Scanner(file)) {
-            scriptStack.add(fileName);
-            processInput(fileScanner);
-            scriptStack.remove(fileName);
+            while (scriptScanner.hasNextLine()) {
+                String line = scriptScanner.nextLine().trim();
+                if (line.isEmpty()) continue;
+
+                userCommand = (line + " ").split(" ", 2);
+                userCommand[1] = userCommand.length > 1 ? userCommand[1].trim() : "";
+
+                executionOutput.append(console.getPrompt()).append(String.join(" ", userCommand)).append("\n");
+
+                ExecutionResponse response = launchCommand(userCommand);
+                executionOutput.append(response.getMessage()).append("\n");
+
+                if (!response.getExitCode()) break;
+            }
+
+            console.selectConsoleScanner();
+            return new ExecutionResponse(true, executionOutput.toString());
+
         } catch (FileNotFoundException e) {
-            console.println("Не удалось открыть файл скрипта: " + fileName);
+            return new ExecutionResponse(false, "Файл со скриптом не найден!");
+        } catch (NoSuchElementException e) {
+            return new ExecutionResponse(false, "Файл со скриптом пуст!");
+        } catch (Exception e) {
+            return new ExecutionResponse(false, "Ошибка при выполнении скрипта: " + e.getMessage());
+        } finally {
+            scriptStack.remove(argument);
         }
+    }
+
+    private ExecutionResponse launchCommand(String[] userCommand) throws Exception {
+        if (userCommand[0].isEmpty()) return new ExecutionResponse("");
+
+        Executable command = commands.get(userCommand[0]);
+
+        if (command == null) {
+            return new ExecutionResponse(false, "Команда '" + userCommand[0] + "' не найдена.");
+        }
+
+        if (userCommand[0].equals("execute_script")) {
+            return scriptMode(userCommand[1]);
+        }
+
+        return command.apply(userCommand[1]);
     }
 }

@@ -1,7 +1,9 @@
 package ru.suvorov.server;
 
 
-public class ExecutionResponse {
+import ru.suvorov.server.commands.interfaces.Executable;
+
+public class ExecutionResponse implements Executable {
     private final boolean exitCode;
     private final String message;
 
@@ -26,6 +28,16 @@ public class ExecutionResponse {
     public String toString() {
         return exitCode + ";" + message + ";";
 
+    }
+
+    /**
+     * @param arg
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public ExecutionResponse apply(String arg) throws Exception {
+        return null;
     }
 }
 

@@ -24,7 +24,7 @@ public class FilterLessThanGovernor extends Command implements Executable {
     }
 
     @Override
-    public ExecutionResponse apply(String arg) throws Exception {
+    public ExecutionResponse apply(String arg) {
         if (collectionManager.getCollection() == null || collectionManager.getCollection().isEmpty())
             return new ExecutionResponse(false, "Коллекция пуста или удаление невозможно");
 
