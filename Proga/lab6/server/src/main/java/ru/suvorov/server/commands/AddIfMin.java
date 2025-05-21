@@ -38,15 +38,15 @@ public class AddIfMin extends Command implements Executable {
         try {
             if (!(arg instanceof City)) {
                 return new ExecutionResponse(false, "Ошибка: ожидался объект City.");
-            }
+        }
             City newCity = (City) arg;
             newCity.validate();
-            LinkedList<City> collection = collectionManager.getCollection();
-            City minCity = collection.stream().min((c1, c2) -> Long.compare(c1.getId(), c2.getId())).orElse(null);
-            if (minCity == null || newCity.getId() < minCity.getId()) {
-                collectionManager.add(newCity);
-                return new ExecutionResponse(true, "Элемент добавлен, так как его значение меньше, чем у наименьшего элемента");
-            } else return new ExecutionResponse(false, "Новый элемент не меньше наименьшего элемента в коллекции");
+        LinkedList<City> collection = collectionManager.getCollection();
+        City minCity = collection.stream().min((c1, c2) -> Long.compare(c1.getId(), c2.getId())).orElse(null);
+        if (minCity == null || newCity.getId() < minCity.getId()) {
+            collectionManager.add(newCity);
+            return new ExecutionResponse(true, "Элемент добавлен, так как его значение меньше, чем у наименьшего элемента");
+        } else return new ExecutionResponse(false, "Новый элемент не меньше наименьшего элемента в коллекции");
         } catch (InvalidDataException e) {
             return new ExecutionResponse(false, e.getMessage());
         }

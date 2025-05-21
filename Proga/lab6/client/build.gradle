@@ -21,6 +21,20 @@ application {
     mainClass = 'ru.suvorov.client.Client'
 }
 
+run {
+    standardInput = System.in
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'ru.suvorov.client.Client'
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
 test {
     useJUnitPlatform()
 } 

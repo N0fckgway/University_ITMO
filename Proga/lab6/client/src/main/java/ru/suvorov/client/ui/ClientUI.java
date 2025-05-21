@@ -13,6 +13,7 @@ import ru.suvorov.enums.Climate;
 import ru.suvorov.enums.Government;
 import ru.suvorov.enums.StandardOfLiving;
 import java.time.ZonedDateTime;
+import java.io.IOException;
 
 public class ClientUI {
     private final StadartConsole console;
@@ -203,8 +204,17 @@ public class ClientUI {
                 }
 
             } catch (NoSuchElementException e) {
-                console.printError("Ввод завершён. Клиент закрывается.\n");
-                break;
+                if (e.getMessage() != null && e.getMessage().contains("Достигнут конец ввода")) {
+                    console.printError("Ввод завершён. Клиент закрывается.\n");
+                    break;
+                }
+                console.printError("Ошибка ввода: " + e.getMessage() + "\n");
+            } catch (RuntimeException e) {
+                console.printError("Ошибка: " + e.getMessage() + "\n");
+                if (e.getCause() instanceof IOException) {
+                    console.printError("Проблема с соединением. Попробуйте перезапустить клиент.\n");
+                    break;
+                }
             } catch (Exception e) {
                 console.printError("Ошибка: " + e.getMessage() + "\n");
             }

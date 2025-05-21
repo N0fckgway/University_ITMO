@@ -23,49 +23,49 @@ public class ExecuteScript extends Command implements Executable {
     }
 
     @Override
-    public ExecutionResponse apply(Object arg) throws Exception {
-        if (arg == null || ((String) arg).isEmpty()) {
-            return new ExecutionResponse(false, "Не указан файл скрипта");
-        }
+public ExecutionResponse apply(Object arg) throws Exception {
+    if (arg == null || ((String) arg).isEmpty()) {
+        return new ExecutionResponse(false, "Не указан файл скрипта");
+    }
 
-        String fileName = ((String) arg).trim();
+    String fileName = ((String) arg).trim();
         if (scriptStack.contains(fileName)) {
             return new ExecutionResponse(false, "Обнаружена рекурсия при выполнении скрипта: " + fileName);
         }
-        File file = new File(fileName);
+    File file = new File(fileName);
 
-        try (Scanner scanner = new Scanner(file)) {
+    try (Scanner scanner = new Scanner(file)) {
             scriptStack.add(fileName);
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine().trim();
-                if (line.isEmpty() || line.startsWith("#")) {
-                    continue;
-                }
-                // Парсим команду и аргумент
-                String[] parts = line.split("\\s+", 2);
-                String cmd = parts[0];
-                String cmdArg = parts.length > 1 ? parts[1] : null;
-
-                // Получаем команду из реестра
-                Executable command = Server.getCommandRegistry().get(cmd);
-                if (command != null) {
-                    ExecutionResponse resp = command.apply(cmdArg);
-                    console.println(resp.getMessage());
-                } else {
-                    console.println("Неизвестная команда: " + cmd);
-                }
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine().trim();
+            if (line.isEmpty() || line.startsWith("#")) {
+                continue;
             }
+            // Парсим команду и аргумент
+            String[] parts = line.split("\\s+", 2);
+            String cmd = parts[0];
+            String cmdArg = parts.length > 1 ? parts[1] : null;
+
+            // Получаем команду из реестра
+            Executable command = Server.getCommandRegistry().get(cmd);
+            if (command != null) {
+                ExecutionResponse resp = command.apply(cmdArg);
+                console.println(resp.getMessage());
+            } else {
+                console.println("Неизвестная команда: " + cmd);
+            }
+        }
             scriptStack.remove(fileName);
-        } catch (FileNotFoundException e) {
+    } catch (FileNotFoundException e) {
             scriptStack.remove(fileName);
-            return new ExecutionResponse(false, "Файл не найден: " + e.getMessage());
+        return new ExecutionResponse(false, "Файл не найден: " + e.getMessage());
         } catch (Exception e) {
             scriptStack.remove(fileName);
             throw e;
-        }
-
-        return new ExecutionResponse(true, "Скрипт успешно выполнен");
     }
+
+    return new ExecutionResponse(true, "Скрипт успешно выполнен");
+}
 
 
 }

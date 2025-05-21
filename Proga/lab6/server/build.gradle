@@ -11,6 +11,11 @@ repositories {
     mavenCentral()
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_17 
+    targetCompatibility = JavaVersion.VERSION_17 
+}
+
 dependencies {
     implementation project(':common')
     implementation 'com.google.code.gson:gson:2.10.1'
@@ -23,6 +28,16 @@ dependencies {
 
 application {
     mainClass = 'ru.suvorov.server.Server'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'ru.suvorov.server.Server'
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 test {

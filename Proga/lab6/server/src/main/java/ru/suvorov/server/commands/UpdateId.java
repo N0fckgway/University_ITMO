@@ -29,17 +29,17 @@ public class UpdateId extends Command implements Executable {
         try {
             if (!(arg instanceof Object[] arr) || arr.length != 2 || !(arr[0] instanceof Long) || !(arr[1] instanceof City)) {
                 return new ExecutionResponse(false, "Ошибка: ожидался массив [Long id, City city].");
-            }
+        }
             Long idToUpdate = (Long) arr[0];
             City newCity = (City) arr[1];
             newCity.validate();
-            Long cityId = collectionManager.byId(idToUpdate);
-            if (cityId == null) return new ExecutionResponse(false, "Город с id " + idToUpdate + " не найден.");
-            boolean success = collectionManager.update(cityId, newCity);
-            if (success) {
-                return new ExecutionResponse(true, "Город с id " + idToUpdate + " успешно обновлён.");
-            } else
-                return new ExecutionResponse(false, "Ошибка при обновлении города.");
+        Long cityId = collectionManager.byId(idToUpdate);
+        if (cityId == null) return new ExecutionResponse(false, "Город с id " + idToUpdate + " не найден.");
+        boolean success = collectionManager.update(cityId, newCity);
+        if (success) {
+            return new ExecutionResponse(true, "Город с id " + idToUpdate + " успешно обновлён.");
+        } else
+            return new ExecutionResponse(false, "Ошибка при обновлении города.");
         } catch (InvalidDataException e) {
             return new ExecutionResponse(false, e.getMessage());
         }

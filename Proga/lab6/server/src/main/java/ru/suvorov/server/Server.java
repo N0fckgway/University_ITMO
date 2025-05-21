@@ -114,7 +114,7 @@ public final class Server {
 
             while (true) {
                 Socket clientSocket = serverSocket.accept();
-                handleClient(clientSocket);
+                new Thread(() -> handleClient(clientSocket)).start();
             }
         } catch (IOException e) {
             logger.error("Ошибка при запуске сервера: {}", e.getMessage());

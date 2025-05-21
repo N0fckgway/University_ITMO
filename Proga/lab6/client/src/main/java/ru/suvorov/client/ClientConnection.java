@@ -1,7 +1,6 @@
 package ru.suvorov.client;
 
 import ru.suvorov.CommandRequest;
-import ru.suvorov.ExecutionResponse;
 
 import java.io.*;
 import java.net.InetSocketAddress;
@@ -11,61 +10,82 @@ import java.util.concurrent.TimeUnit;
 public class ClientConnection {
     private final String host;
     private final int port;
-    private static final int MAX_RECONNECT_ATTEMPTS = 5;
-    private static final int RECONNECT_DELAY_MS = 1000;
+    private static final int RECONNECT_DELAY_MS = 5000; // Увеличиваем задержку до 5 секунд
+    private SocketChannel channel;
+    private ObjectOutputStream oos;
+    private ObjectInputStream ois;
+    private boolean isConnected = false;
 
     public ClientConnection(String host, int port) {
         this.host = host;
         this.port = port;
+        connect();
     }
 
-    public Object sendRequest(CommandRequest request) {
-        SocketChannel channel = null;
-        ObjectOutputStream oos = null;
-        ObjectInputStream ois = null;
-        int attempts = 0;
-        while (attempts < MAX_RECONNECT_ATTEMPTS) {
+    private void connect() {
+        while (!isConnected) {
             try {
+                if (channel != null) {
+                    try {
+                        channel.close();
+                    } catch (IOException e) {
+                        // Игнорируем ошибку
+                    }
+                }
                 channel = SocketChannel.open();
                 channel.connect(new InetSocketAddress(host, port));
                 channel.configureBlocking(true);
+                
                 oos = new ObjectOutputStream(channel.socket().getOutputStream());
                 ois = new ObjectInputStream(channel.socket().getInputStream());
-
-                // Отправляем объект команды
-                oos.writeObject(request);
-                oos.flush();
-
-                // Получаем ответ (ExecutionResponse или коллекцию)
-                Object response = ois.readObject();
-                return response;
-            } catch (IOException | ClassNotFoundException e) {
-                attempts++;
-                if (attempts < MAX_RECONNECT_ATTEMPTS) {
-                    System.err.println("Не удалось подключиться к серверу. Попытка " + attempts + " из " + MAX_RECONNECT_ATTEMPTS);
-                    try {
-                        TimeUnit.MILLISECONDS.sleep(RECONNECT_DELAY_MS);
-                    } catch (InterruptedException ie) {
-                        Thread.currentThread().interrupt();
-                        break;
-                    }
-                } else {
-                    return new ExecutionResponse(false, "Ошибка: " + e.getMessage());
-                }
-            } finally {
+                isConnected = true;
+                System.out.println("Успешно подключено к серверу");
+                return;
+            } catch (IOException e) {
+                System.err.println("Не удалось подключиться к серверу. Повторная попытка через " + (RECONNECT_DELAY_MS/1000) + " секунд...");
                 try {
-                    if (oos != null) oos.close();
-                    if (ois != null) ois.close();
-                    if (channel != null) channel.close();
-                } catch (IOException e) {
-                    System.err.println("Ошибка при закрытии соединения: " + e.getMessage());
+                    TimeUnit.MILLISECONDS.sleep(RECONNECT_DELAY_MS);
+                } catch (InterruptedException ie) {
+                    Thread.currentThread().interrupt();
+                    break;
                 }
             }
         }
-        return new ExecutionResponse(false, "Ошибка: не удалось подключиться к серверу");
+    }
+
+    public Object sendRequest(CommandRequest request) {
+        while (true) {
+            try {
+                if (channel == null || !channel.isConnected() || !isConnected) {
+                    isConnected = false;
+                    connect();
+                }
+                
+                oos.writeObject(request);
+                oos.flush();
+
+                return ois.readObject();
+            } catch (IOException | ClassNotFoundException e) {
+                System.err.println("Ошибка при отправке запроса. Попытка переподключения...");
+                isConnected = false;
+                try {
+                    TimeUnit.MILLISECONDS.sleep(RECONNECT_DELAY_MS);
+                    connect(); // Переподключаемся при ошибке
+                } catch (InterruptedException ie) {
+                    Thread.currentThread().interrupt();
+                    throw new RuntimeException("Операция прервана", ie);
+                }
+            }
+        }
     }
 
     public void close() {
-        // Метод больше не нужен, но оставлен для совместимости
+        try {
+            if (oos != null) oos.close();
+            if (ois != null) ois.close();
+            if (channel != null) channel.close();
+        } catch (IOException e) {
+            System.err.println("Ошибка при закрытии соединения: " + e.getMessage());
+        }
     }
 } 
