@@ -1,0 +1,2098 @@
+[
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1988-04-11T02:08:52.014",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.105437"
+    },
+    "id": 50495452031502481
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1989-04-12T10:32:27.993",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.111605"
+    },
+    "id": 246049951501798070
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1956-10-03T05:12:56.308",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.120361"
+    },
+    "id": 449617208117383097
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1988-12-10T15:47:39.809",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.112261"
+    },
+    "id": 462917550621212903
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1984-12-01T12:27:50.927",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.124924"
+    },
+    "id": 513484494717207324
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1957-03-30T18:36:04.418",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.097196"
+    },
+    "id": 591975889029187253
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1938-12-13T00:57:17.432",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.078212"
+    },
+    "id": 680134895339520509
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1930-12-18T21:29:09.364",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.111926"
+    },
+    "id": 879470191338213017
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2019-06-12T18:03:24.486",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.118542"
+    },
+    "id": 1043591127272277380
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1935-09-19T04:56:42.026",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.124181"
+    },
+    "id": 1090774923612930078
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1960-02-26T23:21:22.569",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.117589"
+    },
+    "id": 1162560675599960447
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2004-01-19T11:00:17.594",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.110913"
+    },
+    "id": 1293985363245682565
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1927-06-19T23:41:28.889",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.10708"
+    },
+    "id": 1302690818670937485
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1944-03-10T04:27:36.881",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.093393"
+    },
+    "id": 1406035235882945480
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1982-03-02T21:01:59.86",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.086299"
+    },
+    "id": 1527311877350244803
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2020-12-04T18:46:39.381",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.063099"
+    },
+    "id": 1564902852923901643
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1987-01-13T18:04:17.852",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.123411"
+    },
+    "id": 1733579522068860253
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1944-12-10T19:08:32.511",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.100693"
+    },
+    "id": 1789448873123662766
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2014-03-01T16:11:47.231",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.104637"
+    },
+    "id": 1902121502495163453
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1997-08-27T13:51:54.048",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.088533"
+    },
+    "id": 1977651292431077025
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1981-09-29T02:54:48.053",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.106666"
+    },
+    "id": 2400473904401960344
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1935-05-19T08:57:36.496",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.090572"
+    },
+    "id": 2476077749245329809
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1957-11-02T13:51:14.665",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.109066"
+    },
+    "id": 2485916202744368884
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2014-08-06T08:35:27.303",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.116679"
+    },
+    "id": 2580810708901511836
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1972-12-14T07:06:47.63",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.082866"
+    },
+    "id": 2681630164972359671
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2000-03-15T20:34:32.754",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.074261"
+    },
+    "id": 2841036366992394648
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1933-08-02T18:03:32.4",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.106248"
+    },
+    "id": 2962006860740575408
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2013-01-20T20:34:19.684",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.072795"
+    },
+    "id": 3069048830027911144
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1932-09-12T01:09:24.23",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.114421"
+    },
+    "id": 3075472590654620107
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1976-04-10T21:32:20.651",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.112579"
+    },
+    "id": 3084788186770983429
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1974-01-25T07:40:04.76",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.081751"
+    },
+    "id": 3132368013775687196
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1989-01-17T12:41:49.056",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.122668"
+    },
+    "id": 3404166156596498286
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2020-12-13T08:42:26.763",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.079139"
+    },
+    "id": 3522130308253106938
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1994-09-23T08:39:20.971",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.116367"
+    },
+    "id": 3718418136885183687
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1948-07-29T12:28:54.307",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.123161"
+    },
+    "id": 3907282457341609282
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1930-01-05T18:29:57.942",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.100171"
+    },
+    "id": 4149638433562708597
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1975-06-02T02:37:00.533",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.101763"
+    },
+    "id": 4259066223589477669
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2019-10-08T14:08:29.519",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.122917"
+    },
+    "id": 4292786957091096444
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1966-03-01T12:54:48.109",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.085238"
+    },
+    "id": 4512077138243045406
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1982-06-20T19:22:25.273",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.11821"
+    },
+    "id": 4652063143072974446
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2018-03-29T18:02:03.234",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.080898"
+    },
+    "id": 4714598372749494665
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2024-02-17T21:05:10.186",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.091535"
+    },
+    "id": 4748149968957622869
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1943-07-16T04:13:02.403",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.121122"
+    },
+    "id": 4770498282910139693
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1976-01-16T00:31:12.488",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.10417"
+    },
+    "id": 4776863725071255941
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1963-03-29T16:52:31.106",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.11371"
+    },
+    "id": 4907834769411491947
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1939-05-31T05:39:11.636",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.108259"
+    },
+    "id": 4925308799758583501
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2023-09-23T22:46:11.162",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.1201"
+    },
+    "id": 4984454685601514241
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1974-07-02T05:23:28.225",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.123914"
+    },
+    "id": 5187909444816621025
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2009-03-04T06:44:04.157",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.114113"
+    },
+    "id": 5356173179887240500
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1927-07-13T01:29:55.399",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.103697"
+    },
+    "id": 5369856821903050265
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1956-06-07T00:35:12.188",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.087355"
+    },
+    "id": 5501904995841429090
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1964-02-07T19:10:38.892",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.10584"
+    },
+    "id": 5646622736743678802
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1976-03-06T08:06:21.602",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.105044"
+    },
+    "id": 5754305627714502807
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2011-11-09T13:53:35.181",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.103229"
+    },
+    "id": 5825012219764688665
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1961-05-12T01:07:25.425",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.123678"
+    },
+    "id": 5869940108332256242
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1925-12-04T10:31:46.532",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.094285"
+    },
+    "id": 5910761319836110727
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1984-03-30T05:37:26.812",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.120875"
+    },
+    "id": 6000948705772522620
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1932-07-12T07:01:25.052",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.115089"
+    },
+    "id": 6103983039962498818
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1965-08-12T06:34:12.699",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.116043"
+    },
+    "id": 6119080159510548323
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1961-09-20T20:33:52.77",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.089458"
+    },
+    "id": 6236538390565504013
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1963-12-01T13:54:48.506",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.117282"
+    },
+    "id": 6252983682310031275
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1978-05-22T02:59:58.833",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.080045"
+    },
+    "id": 6285787860572391565
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1974-06-14T21:30:58.291",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.124679"
+    },
+    "id": 6329733951480349405
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1965-04-01T09:10:21.057",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.122415"
+    },
+    "id": 6494485420031623981
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2015-11-23T09:20:55.902",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.098459"
+    },
+    "id": 6594534460007598444
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1940-02-03T11:40:20.186",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.107875"
+    },
+    "id": 6599481286392235280
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1953-01-12T03:01:18.87",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.121643"
+    },
+    "id": 6632186451902024611
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1948-10-09T11:33:16.609",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.124432"
+    },
+    "id": 6720983984265642428
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1973-05-19T04:06:01.177",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.097809"
+    },
+    "id": 6940911126572515467
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2018-10-16T10:11:45.212",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.111268"
+    },
+    "id": 7021208209506387639
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1970-12-26T17:54:37.911",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.070264"
+    },
+    "id": 7163950997581482829
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1999-01-12T14:49:34.936",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.092432"
+    },
+    "id": 7222512316674625081
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1942-05-22T18:46:49.244",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.099082"
+    },
+    "id": 7551085215144757645
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2002-03-31T17:42:59.847",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.122145"
+    },
+    "id": 7683905167608794569
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1980-04-10T10:55:15.264",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.099645"
+    },
+    "id": 7730286538666233656
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1977-11-26T19:02:24.589",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.083922"
+    },
+    "id": 7838059837080290658
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1994-08-12T15:55:19.755",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.119504"
+    },
+    "id": 7899110249549546952
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1959-01-12T09:14:37.434",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.120625"
+    },
+    "id": 7993902126820573873
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2017-04-01T17:30:45.176",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.117897"
+    },
+    "id": 7996142910119693756
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2008-05-05T04:47:09.268",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.115723"
+    },
+    "id": 8046306647797615529
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2010-05-08T22:15:38.278",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.121374"
+    },
+    "id": 8137903859508069073
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1993-05-14T19:30:54.304",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.10274"
+    },
+    "id": 8158912469665595618
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1983-08-13T19:10:59.484",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.102253"
+    },
+    "id": 8173316166864291289
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1980-07-05T15:18:42.252",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.067784"
+    },
+    "id": 8174777909425031805
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1994-07-26T23:55:05.673",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.11698"
+    },
+    "id": 8188902178367098604
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2006-04-01T21:59:41.23",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.107482"
+    },
+    "id": 8200097332675825566
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1990-03-17T20:20:35.112",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.076936"
+    },
+    "id": 8230292699802323239
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1928-03-01T07:09:46.323",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.07563"
+    },
+    "id": 8311272311528835264
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1957-04-11T11:23:18.424",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.101234"
+    },
+    "id": 8460653925214209465
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1966-12-13T12:45:30.786",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.12189"
+    },
+    "id": 8565310036163641533
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2001-12-03T01:14:40.174",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.115408"
+    },
+    "id": 8596594155201184900
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2015-04-29T10:32:42.631",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.108661"
+    },
+    "id": 8646511095314728154
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1977-04-26T05:52:02.616",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.109538"
+    },
+    "id": 8664304341298397880
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1971-05-25T02:30:19.504",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.11981"
+    },
+    "id": 8697590097497243827
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2000-03-16T17:37:00.995",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.109918"
+    },
+    "id": 8760379051576281965
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2003-12-04T07:59:35.657",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.119184"
+    },
+    "id": 8925635472007253163
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "2006-07-21T05:51:56.462",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.114731"
+    },
+    "id": 8943223932465270650
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1929-07-10T15:16:25.955",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.118864"
+    },
+    "id": 9006431442177903197
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1984-11-06T07:59:56.751",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.110249"
+    },
+    "id": 9110561110434269224
+  },
+  {
+    "name": "C",
+    "coordinates": {
+      "x": 182,
+      "y": 235
+    },
+    "creationDate": "1947-06-26T06:30:33.098",
+    "area": 10000,
+    "population": 56780000,
+    "metersAboveSeaLevel": 12340.0,
+    "climate": "MONSOON",
+    "government": "PLUTOCRACY",
+    "standardOfLiving": "LOW",
+    "governor": {
+      "name": "Станислав",
+      "age": 18,
+      "height": 173.0,
+      "birthday": "2025-04-10T13:53:21.1105
