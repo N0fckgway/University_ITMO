@@ -1,4 +1,4 @@
-CREATE TYPE status AS ENUM (
+    CREATE TYPE status AS ENUM (
     'открыта',
     'закрыта'
 );

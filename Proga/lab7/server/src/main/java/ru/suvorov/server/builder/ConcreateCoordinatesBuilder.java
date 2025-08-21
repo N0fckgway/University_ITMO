@@ -1,0 +1,35 @@
+package ru.suvorov.server.builder;
+
+import lombok.Getter;
+import ru.suvorov.model.Coordinates;
+
+
+@Getter
+public class ConcreateCoordinatesBuilder implements BuilderCoordinates{
+    private long id;
+    private long x;
+    private Long y; //Значение поля должно быть больше -583, Поле не может быть null
+
+    @Override
+    public BuilderCoordinates setX(long x) {
+        this.x = x;
+        return this;
+    }
+
+    @Override
+    public BuilderCoordinates setY(Long y) {
+        this.y = y;
+        return this;
+    }
+
+    public BuilderCoordinates setId(Long id) {
+        this.id = id;
+        return this;
+    }
+
+    @Override
+    public Coordinates getCoordinates() {
+        return new Coordinates(x, y);
+    }
+
+}
