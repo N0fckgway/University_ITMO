@@ -1,0 +1,372 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+:root {
+    /* Цветовая система */
+    --color-bg: #f6f7fb;
+    --color-surface: #ffffff;
+    --color-text: #1f2430;
+    --color-muted: #6b7280;
+
+    --color-primary: oklch(65% 0.18 35);
+    --color-primary-contrast: #ffffff;
+    --color-ring: rgba(36,99,235,0.35);
+
+    --color-border: #e5e7eb;
+    --shadow-soft: 0 6px 18px rgba(17, 24, 39, 0.08);
+    --radius: 1rem;
+
+    background-color: var(--color-bg);
+    color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #0b0d12;
+        --color-surface: #111827;
+        --color-text: #e5e7eb;
+        --color-muted: #9ca3af;
+
+        --color-primary: oklch(70% 0.17 35);
+        --color-primary-contrast: #0b0d12;
+        --color-ring: rgba(59,130,246,0.45);
+
+        --color-border: #1f2937;
+        color-scheme: dark;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+header {
+    margin-bottom: 2em;
+}
+
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+    margin-block-end: 0;
+
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    color: var(--color-text);
+    background: radial-gradient(1200px 600px at 10% -10%, rgba(59,130,246,0.06), transparent 60%),
+    radial-gradient(800px 500px at 110% 10%, rgba(236,72,153,0.06), transparent 60%),
+    var(--color-bg);
+}
+
+h1, h2, h4, h4,
+button, input, label {
+    line-height: 1.1;
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: var(--color-primary);
+}
+
+input, button,
+textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+main table {
+    width: 100%;
+}
+main table td {
+    text-align: left;
+    vertical-align: middle;
+}
+
+
+.graph {
+    background-color: white;
+    box-shadow: 2px 2px 2px 2px rgb(235,235,235);
+    border-radius: 1em;
+    margin-left: -250px;
+    margin-top: 52px;
+}
+
+
+
+input, button,
+textarea, select {
+    margin: 2%;
+    padding: 0.7em 1em;
+    border: 1px solid var(--color-border);
+    accent-color: var(--color-primary);
+    background-color: color-mix(in oklab, var(--color-surface) 92%, var(--color-border));
+    color: var(--color-text);
+    border-radius: 0.75rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+:is(input, button, textarea, select):not(:disabled):hover {
+    border-color: color-mix(in srgb, var(--color-primary) 55%, var(--color-border));
+}
+
+:is(input, textarea, select):focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px var(--color-ring);
+}
+
+button:hover:not(:disabled), button:focus:not(:disabled), button:active:not(:disabled),
+input[type=checkbox]:hover:not(:disabled), input[type=checkbox]:focus:not(:disabled), input[type=checkbox]:active:not(:disabled) {
+    cursor: pointer;
+}
+
+input[type=text] {
+    min-height: 2.4em;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+
+fieldset {
+    border: 0;
+    margin: 0.5em;
+}
+fieldset * + * {
+    margin-top: 0.5em;
+}
+
+.btn-submit {
+    background: var(--color-primary);
+    color: var(--color-primary-contrast);
+    border-color: transparent;
+    border-radius: 999px;
+    padding: 0.7em 2em;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.06s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.btn-submit:not(:disabled):hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(36, 99, 235, 0.18);
+}
+.btn-submit:not(:disabled):active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-soft);
+}
+.btn-submit:not(:disabled):hover svg {
+    fill: var(--color-primary-contrast);
+}
+.btn-submit:disabled:hover {
+    cursor: not-allowed;
+}
+.btn-submit svg {
+    display: block;
+    width: 16px;
+    height: 16px;
+    fill: var(--color-primary-contrast);
+}
+
+.center-aligner, .grid-aligner {
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.center-aligner {
+    display: flex;
+    align-items: center;
+}
+
+
+.grid-aligner {
+    display: grid;
+    align-items: start;
+
+}
+
+.err {
+    min-height: 1.2em;
+    visibility: hidden;
+    color: oklch(65% 0.25 25);
+}
+.err.show {
+    visibility: visible;
+}
+
+canvas, fieldset, #requestTable {
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-soft);
+    border-radius: var(--radius);
+}
+
+main .main-table {
+    position: relative;
+}
+main .main-table tr td:nth-child(3) {
+    vertical-align: top;
+}
+
+
+#r {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#r-input {
+    margin-left: -100px;
+    margin-bottom: 0;
+    margin-top: 25px;
+}
+
+#r-err {
+    margin-left: -120px;
+    margin-top: 0.70rem;
+    text-align: center;
+}
+
+#xy-table {
+    margin-left: 10px;
+}
+
+
+#requestTable {
+    border-collapse: separate;
+    border-spacing: 0;
+    position: absolute;
+    width: max-content;
+    max-width: 31%;
+    overflow-wrap: break-word;
+    right: -150px;
+}
+#requestTable th {
+    background-color: color-mix(in oklab, var(--color-surface) 85%, var(--color-border));
+}
+#requestTable td, #requestTable th {
+    padding: 0.5em 0.75em;
+    min-width: 25px;
+    text-align: center;
+    border: 1px solid var(--color-border);
+}
+#requestTable tr {
+    transition: background-color 0.3s ease;
+}
+#requestTable tr:not(thead tr):hover {
+    background-color: color-mix(in oklab, var(--color-primary) 10%, var(--color-surface));
+    cursor: pointer;
+}
+#requestTable tr td:nth-child(3) {
+    vertical-align: middle;
+}
+#requestTable tr:first-child th:first-child {
+    border-top-left-radius: 1em;
+}
+#requestTable tr:first-child th:last-child {
+    border-top-right-radius: 1em;
+}
+#requestTable tr:last-child td:first-child {
+    border-bottom-left-radius: 1em;
+}
+#requestTable tr:last-child td:last-child {
+    border-bottom-right-radius: 1em;
+}
+
+#pagination-controls {
+    position: absolute;
+    bottom: -30%;
+    left: 39%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-surface);
+    padding: 0.5em;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+}
+#pagination-controls .pagination-row {
+    display: flex;
+    justify-content: center;
+    margin: 0 5px;
+}
+
+
+#pagination-controls button.btn-submit {
+    min-width: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#pagination-controls button.btn-submit svg {
+    display: block;
+    margin: 0 auto;
+}
+#pagination-controls #clear-table.btn-submit:hover {
+    color: #fff;
+}
+#pagination-controls #page-info {
+    min-width: 3em;
+    font-weight: bold;
+    margin: 0 0.5rem;
+}
+
+#pagination-controls select {
+    margin: 0.5em;
+    padding: 0.2em 0.5em;
+    border-radius: 999px;
+    border: 1px solid var(--color-border);
+}
+
+
+@media (max-width: 1024px) {
+    main .main-table colgroup col { width: 33% !important; }
+    #requestTable { max-width: 45%; }
+}
+
+@media (max-width: 768px) {
+    body { font-size: 15px; }
+    main table { display: block; }
+    main .main-table { position: static; }
+    main .main-table tr { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+    #requestTable { position: static; width: 100%; max-width: 100%; }
+    #pagination-controls { position: static; margin-top: 0.75rem; left: 0; }
+}
+
+@media (max-width: 420px) {
+    body { font-size: 14px; }
+    .btn-submit { padding: 0.6em 1em; }
+}
+
+#main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 1.25rem;
+}
+
+
+header hr {
+    max-width: 1100px;
+    margin: 0.25rem auto 0;
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+}
+main .main-table {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: left;
+}
+/*# sourceMappingURL=style.css.map */

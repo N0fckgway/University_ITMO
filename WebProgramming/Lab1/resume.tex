@@ -1,0 +1,99 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{geometry}
+\usepackage{palatino}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{ulem}
+\usepackage{fancyhdr}
+
+\geometry{margin=1.2in}
+\renewcommand{\familydefault}{\rmdefault}
+
+% Настройка ссылок
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=black
+}
+
+% Настройка списков
+\setlist[itemize]{leftmargin=*,labelsep=0.3em,itemsep=0.1em,parsep=0em}
+\setlist[enumerate]{leftmargin=*,labelsep=0.3em,itemsep=0.1em,parsep=0em}
+
+% Настройка заголовков разделов
+\titleformat{\section}{\large\bfseries}{}{0em}{}
+\titlespacing{\section}{0pt}{1.5em}{0.8em}
+
+% Настройка номера страницы
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{1}
+
+\begin{document}
+
+% Заголовок с именем и контактами
+\noindent
+{\Huge \textbf{Suvorov Stanislav}}
+
+\vspace{0.4em}
+\noindent
+E-mail: suvorov\_sd@icloud.com • Contact Number: +79272899537 • Telegram: @N0fckgway • GitHub: \href{https://github.com/N0fckgway}{https://github.com/N0fckgway}
+
+\vspace{1.2em}
+
+% Раздел "Обо мне"
+\section{Обо мне}
+Backend разработчик на Java. C двухлетним опытом программирования. Студент второго курса университета ИТМО программы Software engineering. Софтовый человек и со мной легко найти общий язык и стрессоустойчивый беру на себя ответственность за других.
+
+% Раздел "Hard Skills"
+\section{Hard Skills}
+\begin{itemize}[label=+]
+    \item Java, Python, C++
+    \item Git
+    \item Linux
+    \item Базы Данных: MySQL, PostgreSQL
+    \item Работал с API Telegram
+    \item Docker
+\end{itemize}
+
+% Раздел "Образование"
+\section{Образование}
+\textbf{ITMO University} · 2024-2028 (в процессе)
+\begin{itemize}[label=$\bullet$]
+    \item Бакалавриат 09.03.04 Программная Инженерия Системно Прикладное Программное Обеспечение
+    \item Saint-Petersburg
+\end{itemize}
+
+% Раздел "Проекты"
+\section{Проекты}
+
+\textbf{KaifBot} \hfill \href{https://github.com/N0fckgway/KaifBot}{→ Link}
+
+Интеллектуальный Telegram бот для управления днями рождения друзей и близких.
+\begin{itemize}[label=$\bullet$]
+    \item Java + PostgreSQL + TelegramAPI
+\end{itemize}
+
+\vspace{0.6em}
+
+\textbf{Terminal Application} \hfill \href{https://github.com/N0fckgway/University_ITMO/tree/main/Proga}{→ Link}
+
+Терминальное приложение для работы с объектами.
+\begin{itemize}[label=$\bullet$]
+    \item Java + PostgreSQL
+\end{itemize}
+
+% Раздел "Языки"
+\section{Языки}
+\begin{itemize}[label=+]
+    \item Русский
+    \item Английский B1
+\end{itemize}
+
+\end{document}
+
