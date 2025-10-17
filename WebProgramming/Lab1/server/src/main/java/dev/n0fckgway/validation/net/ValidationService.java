@@ -24,6 +24,7 @@ public class ValidationService implements Runnable {
     public ValidationService() {
         fcgiService.registerHandler("GET", "/", this::processHit);
         fcgiService.registerHandler("GET", "/dots", this::processDots);
+        fcgiService.registerHandler("GET", "/clear", this::processClear);
     }
 
     @Override
@@ -41,7 +42,6 @@ public class ValidationService implements Runnable {
         HitResponse resp = cache.get(req);
         writeHitResponse(resp);
         if (cache.size() > 10000) {
-            // Удаляем первый (самый старый) элемент из LinkedHashMap
             Iterator<HitRequest> iterator = cache.keySet().iterator();
             if (iterator.hasNext()) {
                 cache.remove(iterator.next());
@@ -70,11 +70,9 @@ public class ValidationService implements Runnable {
     }
 
     private boolean validateCoordinates(double x, double y, double r) {
-        return (Math.abs(x) <= r && Math.abs(y) <= r && (
-                (x >= 0 && y <= 0 && (x * x + y * y <= r * r)) ||
-                        (x <= 0 && x >= -r && y <= 0 && y >= -r / 2) ||
-                        (x >= 0 && y >= 0 && (x + y <= r)))
-        );
+        return (x <= 0 && y >= 0 && (x * x + y * y <= r * r)) ||
+                (x >= 0 && x <= r && y >= 0 && y <= r) ||
+                (x >= 0 && y <= 0 && y >= -(r -  x * 2) / 2);
     }
 
     private void writeHitResponse(HitResponse resp) {
@@ -84,6 +82,14 @@ public class ValidationService implements Runnable {
         System.out.print("Content-Length: " + body.getBytes(StandardCharsets.UTF_8).length + "\r\n");
         System.out.print("\r\n");
         System.out.print(body);
+    }
+
+    private void processClear() {
+        cache.clear();
+        System.out.print("Status: 200 OK\r\n");
+        System.out.print("Content-Type: application/json\r\n");
+        System.out.print("\r\n");
+        System.out.print("{\"success\": true}");
     }
 
     private void processDots() throws ParseException {

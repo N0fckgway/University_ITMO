@@ -102,23 +102,19 @@ function putCache(cachedPage) {
 async function updateLastPage() {
     let totalPages = Math.max(1, Math.ceil(tableRows.length / pageSize));
     let cache = await getCache(totalPages);
-    //console.log(`tableRows.length: ${tableRows.length}, totalSize: ${totalPages * pageSize}`);
-    //console.log(`cache size: ${cache.dots.length}`);
     if (tableRows.length < totalPages * pageSize) {
         if (cache.dots.length !== 0) {
             await deleteLastN(tableRows.length % pageSize);
             putCache(cache);
         }
     }
-    //console.log(`disabled: ${!cache.hasNext}`);
-    //console.log(`page: ${currentPage} of ${totalPages}`);
+
     if (currentPage === totalPages) {
         $('#page-next').prop('disabled', !cache.hasNext);
     }
 }
 
 function renderTable() {
-    //console.log(tableRows.length);
     const tbody = $('#requestTable tbody');
     tbody.empty();
     const start = (currentPage - 1) * pageSize;
@@ -182,10 +178,22 @@ $('#page-size-select').on('change', async function () {
     }
 });
 
-$('#clear-table').on('click', function () {
+$('#clear-table').on('click',  async function () {
     currentPage = 1;
     tableRows = [];
     const transaction = db.transaction([storeName], "readwrite");
     transaction.objectStore(storeName).clear();
+
+    try {
+         await $.ajax({
+            url: '/api/clear',
+            type: 'GET'
+        });
+    } catch (error) {
+        console.error('Failed to clear server cache:', error)
+    }
     renderTable();
+    dots = [];
+    refresh(parseFloat($('input[name="r"]').val()));
+
 });

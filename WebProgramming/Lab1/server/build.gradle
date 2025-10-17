@@ -9,18 +9,15 @@ dependencies {
 }
 
 jar {
-    manifest {
-        attributes(
-                'Main-class':  'dev.n0fckgway.Main'
-        )
-    }
-    from {
-        configurations.runtimeClasspath.collect {
-            it.isDirectory() ? it : zipTree(it)
-        }
-        archiveFileName = 'server.jar'
+
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
+
 
 application {
     mainClass = 'dev.n0fckgway.Main'

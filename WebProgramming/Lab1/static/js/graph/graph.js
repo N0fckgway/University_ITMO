@@ -3,7 +3,7 @@ const ctx = canvas.getContext("2d");
 
 const canvasCfg = {
     basisR: canvas.width * 0.4,
-    r: 1,
+    r: 2,
     shift: 10
 }
 
@@ -42,20 +42,47 @@ function draw() {
 }
 
 function drawShape() {
-    drawCircle(canvas.width / 2, canvas.height / 2, 0, Math.PI / 2);
-    ctx.beginPath();
-    ctx.fillRect(canvas.width / 2 - canvasCfg.basisR, canvas.height / 2, canvasCfg.basisR, canvasCfg.basisR / 2);
-    drawTriangle(
-        {x: canvas.width / 2, y: canvas.height / 2},
-        {x: canvas.width / 2 + canvasCfg.basisR, y: canvas.height / 2},
-        {x: canvas.width / 2, y: canvas.height / 2 - canvasCfg.basisR});
+    const R = canvasCfg.basisR;
+
+    ctx.save();
+    ctx.translate(canvas.width / 2, canvas.height / 2);
+
+    drawLeftSemicircle(R);
+    drawTopRightSquare(R);
+    drawBottomRightTriangle(R);
+
+    ctx.restore();
 }
 
-function drawCircle(x, y, startAngle, endAngle) {
+function drawLeftSemicircle(R) {
     ctx.beginPath();
-    ctx.moveTo(x, y);
-    ctx.arc(x, y, canvasCfg.basisR, startAngle, endAngle);
+    // Четверть круга во второй четверти: от π/2 до π
+    ctx.arc(0, 0, R, Math.PI, Math.PI * 1.5, false);
+    ctx.lineTo(0, 0);
+    ctx.closePath();
     ctx.fill();
+    ctx.stroke();
+}
+
+function drawTopRightSquare(R) {
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(R, 0);
+    ctx.lineTo(R, -R);
+    ctx.lineTo(0, -R);
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+}
+
+function drawBottomRightTriangle(R) {
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(R / 2, 0);   // вправо до R/2
+    ctx.lineTo(0, R / 2);   // вниз до R/2
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
 }
 
 let dots = []
@@ -86,14 +113,6 @@ function drawPoints() {
     dots.forEach(dot => drawDot(dot));
 }
 
-function drawTriangle(p1, p2, p3) {
-    ctx.beginPath();
-    ctx.moveTo(p1.x, p1.y);
-    ctx.lineTo(p2.x, p2.y);
-    ctx.lineTo(p3.x, p3.y);
-    ctx.closePath();
-    ctx.fill();
-}
 
 function drawAxis() {
     ctx.beginPath();
@@ -108,7 +127,7 @@ function drawAxis() {
 
 function drawArrows() {
     ctx.beginPath();
-    //Y-axis arrow
+    //Y arrow
     ctx.moveTo(canvas.width / 2, 0);
     ctx.lineTo(canvas.width / 2 - canvas.width / 100, canvas.height / 50);
     ctx.moveTo(canvas.width / 2, 0);
@@ -121,19 +140,23 @@ function drawArrows() {
     ctx.stroke();
 }
 
-const labels = [
-    {mult: 1, x: canvasCfg.basisR, y: 0},
-    {mult: 1, x: 0, y: canvasCfg.basisR},
+function getLabels() {
+    const unitInPixels = canvasCfg.basisR;
 
-    {mult: 0.5, x: canvasCfg.basisR / 2, y: 0},
-    {mult: 0.5, x: 0, y: canvasCfg.basisR / 2},
+    return [
+        {mult: 1, x: unitInPixels, y: 0},
+        {mult: 1, x: 0, y: unitInPixels},
 
-    {mult: -1, x: -canvasCfg.basisR, y: 0},
-    {mult: -1, x: 0, y: -canvasCfg.basisR},
+        {mult: 0.5, x: unitInPixels / 2, y: 0},
+        {mult: 0.5, x: 0, y: unitInPixels / 2},
 
-    {mult: -0.5, x: -canvasCfg.basisR / 2, y: 0},
-    {mult: -0.5, x: 0, y: -canvasCfg.basisR / 2}
-]
+        {mult: -1, x: -unitInPixels, y: 0},
+        {mult: -1, x: 0, y: -unitInPixels},
+
+        {mult: -0.5, x: -unitInPixels / 2, y: 0},
+        {mult: -0.5, x: 0, y: -unitInPixels / 2}
+    ];
+}
 
 function drawText() {
     drawLabels();
@@ -143,6 +166,7 @@ function drawText() {
 function drawLabels() {
     ctx.save();
     ctx.fillStyle = "black";
+    const labels = getLabels();
     labels.forEach(label => {
         drawLabel(label);
         drawTick(label);

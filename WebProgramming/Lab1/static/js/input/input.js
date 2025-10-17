@@ -29,7 +29,7 @@ function checkInput() {
 }
 
 function isValidRadius(radius) {
-    return radius != null && !isNaN(radius) && radius >= 1 && radius <= 4;
+    return radius != null && !isNaN(radius) && radius >= 2 && radius <= 5;
 }
 
 $('input[name="y"]').on('keyup', function () {
@@ -46,7 +46,7 @@ $('input[name="y"]').on('keyup', function () {
 })
 
 function isValidY(y) {
-    return y != null && !isNaN(y) && y >= -5 && y <= 5;
+    return y != null && !isNaN(y) && y >= -3 && y <= 5;
 }
 
 $('#requestTable tbody').on('click mouseenter mouseleave', 'tr', function (event) {
