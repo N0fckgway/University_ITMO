@@ -1,0 +1,42 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+*.swp
+*.swo
+*.tmp
+.idea/
+.vscode/
+
+# IntelliJ / JetBrains project files
+*.iml
+*.ipr
+*.iws
+
+# Build system artifacts
+.gradle/
+build/
+**/build/
+out/
+bin/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Gradle local configuration
+gradle-app.setting
+local.properties
+
+# Java / JVM generated files
+*.class
+*.war
+*.ear
+*.jar
+hs_err_pid*
+
+# Logs
+*.log
+logs/
+
+# Environment / secrets
+.env
+.env.*
