@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <servlet>
+        <servlet-name>ControllerServlet</servlet-name>
+        <servlet-class>dev.n0fckgway.lab2.controller.ControllerServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ControllerServlet</servlet-name>
+        <url-pattern>/validationParam</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AreaCheckServlet</servlet-name>
+        <servlet-class>dev.n0fckgway.lab2.controller.AreaCheckServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AreaCheckServlet</servlet-name>
+        <url-pattern>/areaCheck</url-pattern>
+    </servlet-mapping>
+
+</web-app>
