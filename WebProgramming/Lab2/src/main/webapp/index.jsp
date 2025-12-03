@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="static/css/style.css">
     <title>Web-2</title>
@@ -53,32 +55,75 @@
                     </thead>
                 </table>
             </div>
+            <div class="table-footer">
+                <div class="page-block">
+                    <p class="label">Страница</p>
+                    <div class="pager-inline">
+                        <button class="circle-btn ghost-btn">←</button>
+                        <div class="page-indicator">
+                            <span class="page-number">1</span>
+                        </div>
+                        <button class="circle-btn ghost-btn">→</button>
+                    </div>
+                </div>
+                <div class="select-row">
+                    <div class="page-size">
+                        <label class="label" for="page-size">Размер таблицы</label>
+                        <select id="page-size">
+                            <option>5</option>
+                            <option>10</option>
+                            <option>15</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-ghost">Очистить таблицу</button>
+                </div>
+            </div>
         </section>
 
         <section class="card input-card">
             <p class="eyebrow">Расчёт</p>
-            <h2>Выбор координат</h2>
+            <h2 id="header-coordinates" >Выбор координат</h2>
+            <form action="${pageContext.request.contextPath}/validationParam" method="get">
             <div class="input-block">
                 <p class="label">X:</p>
                 <div class="pill-group">
-                    <input class="pill" type="checkbox">-4</input>
-                    <button class="pill">-3</button>
-                    <button class="pill">-2</button>
-                    <button class="pill">-1</button>
-                    <button class="pill is-active">0</button>
-                    <button class="pill">1</button>
-                    <button class="pill">2</button>
-                    <button class="pill">3</button>
-                    <button class="pill">4</button>
+                    <input class="pill-input" type="checkbox" name="x" id="x-4" value="-4">
+                    <label class="pill" for="x-4">-4</label>
+
+                    <input class="pill-input" type="checkbox" name="x" id="x-3" value="-3">
+                    <label class="pill" for="x-3">-3</label>
+
+                    <input class="pill-input" type="checkbox" name="x" id="x-2" value="-2">
+                    <label class="pill" for="x-2">-2</label>
+
+                    <input class="pill-input" type="checkbox" name="x" id="x-1" value="-1">
+                    <label class="pill" for="x-1">-1</label>
+
+                    <input class="pill-input" type="checkbox" name="x" id="x0" value="0" checked>
+                    <label class="pill" for="x0">0</label>
+
+                    <input class="pill-input" type="checkbox" name="x" id="x1" value="1">
+                    <label class="pill" for="x1">1</label>
+
+                    <input class="pill-input" type="checkbox" name="x" id="x2" value="2">
+                    <label class="pill" for="x2">2</label>
+
+                    <input class="pill-input" type="checkbox" name="x" id="x3" value="3">
+                    <label class="pill" for="x3">3</label>
+
+                    <input class="pill-input" type="checkbox" name="x" id="x4" value="4">
+                    <label class="pill" for="x4">4</label>
+                    <p class="err" id="x-err"></p>
                 </div>
             </div>
             <div class="input-block">
                 <label for="y-input" class="label">Y:</label>
-                <input type="text" id="y-input" placeholder="-5 - 3" value="1">
+                <input name="y" type="text" id="y-input" class="text-input" placeholder="Введите значение" value="1">
+                <p class="err" id="y-err"></p>
             </div>
             <div class="input-block slider-block">
                 <label for="r-select" class="label">R:</label>
-                <select name="select" id="r-select">
+                <select name="r" id="r-select">
                     <option value="1" selected>1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -87,29 +132,11 @@
                 </select>
             </div>
             <button class="btn btn-primary full-width">Отправить запрос</button>
-        </section>
-
-        <section class="card pagination-card">
-            <div class="pager">
-                <button class="circle-btn">←</button>
-                <div>
-                    <p class="label">Страница</p>
-                    <strong>1</strong>
-                </div>
-                <button class="circle-btn">→</button>
-            </div>
-            <label class="label" for="page-size">Размер таблицы</label>
-            <div class="select-row">
-                <select id="page-size">
-                    <option>10</option>
-                    <option>20</option>
-                    <option>50</option>
-                </select>
-                <button class="btn btn-ghost">Очистить таблицу</button>
-            </div>
+            </form>
         </section>
     </main>
 </div>
 <script src="static/js/canvas.js"></script>
+<script src="static/js/validation.js"></script>
 </body>
 </html>

@@ -1,16 +1,17 @@
 package dev.n0fckgway.lab2.controller;
 
-import dev.n0fckgway.lab2.exceptions.InvalidDataException;
 import dev.n0fckgway.lab2.model.AreaChecker;
 import dev.n0fckgway.lab2.model.HitResult;
 import dev.n0fckgway.lab2.model.Point;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
+import javax.swing.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,14 +22,20 @@ public class AreaCheckServlet extends HttpServlet {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
 
-        String strX = request.getParameter("x");
+        String[] xValues = request.getParameterValues("x");
         String strY = request.getParameter("y");
         String strR = request.getParameter("r");
 
-        double x, y, r;
+        if (xValues == null || xValues.length == 0) {
+            request.setAttribute("error", "Нужно выбрать хотя бы одно значение X");
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
+            return;
+        }
+
+        double y;
+        double r;
 
         try {
-            x = Double.parseDouble(strX);
             y = Double.parseDouble(strY);
             r = Double.parseDouble(strR);
 
@@ -38,27 +45,57 @@ public class AreaCheckServlet extends HttpServlet {
             return;
         }
 
-        if (!Point.validation(x, y, r)) {
-            request.setAttribute("error", "Параметры не проходят валидацию!");
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
+        List<HitResult> newHits = new ArrayList<>();
+
+        for (String xValue : xValues) {
+            double x;
+            try {
+                x = Double.parseDouble(xValue);
+            } catch (NumberFormatException e) {
+                request.setAttribute("error", "Некорректно введенные параметры!");
+                request.getRequestDispatcher("/index.jsp").forward(request, response);
+                return;
+            }
+
+            try {
+                if (!Point.validation(x, y, r)) {
+                    request.setAttribute("error", "Параметры не проходят валидацию!");
+                    request.getRequestDispatcher("/index.jsp").forward(request, response);
+                    return;
+                }
+            } catch (IllegalArgumentException e) {
+                request.setAttribute("error", "Параметры не проходят валидацию!");
+                request.getRequestDispatcher("/index.jsp").forward(request, response);
+                return;
+            }
+
+            long start = System.nanoTime();
+            boolean hit = AreaChecker.checkHit(x, y, r);
+            long end = System.nanoTime();
+
+            newHits.add(new HitResult(x, y, r, hit, LocalDateTime.now(), end - start));
         }
 
-        long start = System.nanoTime();
-        boolean hit = AreaChecker.checkHit(x, y, r);
-        long end = System.nanoTime();
+        try (PrintWriter out = response.getWriter()) {
+            out.println("<!DOCTYPE html><html><body>");
+            out.printf("<p>Параметры:" + newHits.get(0).toJson());
+            out.println("</body></html>");
+        }
 
-        HitResult hitResult = new HitResult(x, y, r, hit, LocalDateTime.now(), end - start);
 
-        HttpSession httpSession = request.getSession();
-        List<HitResult> results = (List<HitResult>) httpSession.getAttribute("results");
+
+        ServletContext servletContext = request.getServletContext();
+
+        @SuppressWarnings("unchecked")
+        List<HitResult> results = (List<HitResult>) servletContext.getAttribute("results");
 
         if (results == null) {
             results = new ArrayList<>();
-            httpSession.setAttribute("results", results);
+            servletContext.setAttribute("results", results);
         }
-        results.add(hitResult);
-        httpSession.setAttribute("results", results);
-        request.setAttribute("Current Result", hitResult);
+
+        results.addAll(newHits);
+        request.setAttribute("currentResult", newHits.isEmpty() ? null : newHits.get(newHits.size() - 1));
         request.setAttribute("results", results);
         request.getRequestDispatcher("/index.jsp").forward(request, response);
 

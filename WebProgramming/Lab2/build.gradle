@@ -3,8 +3,9 @@ plugins {
     id 'war'
 }
 
-group 'dev.n0fckgway'
-version '1.0-SNAPSHOT'
+
+group 'dev.n0fckgway.lab2'
+
 
 repositories {
     mavenCentral()
@@ -18,9 +19,11 @@ ext {
 }
 
 dependencies {
-    compileOnly('jakarta.servlet:jakarta.servlet-api:6.1.0')
-    annotationProcessor 'org.projectlombok:lombok:1.18.30'
-    compileOnly 'org.projectlombok:lombok:1.18.30'
+    compileOnly ('jakarta.servlet:jakarta.servlet-api:6.1.0')
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0'
+    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1'
+    annotationProcessor ('org.projectlombok:lombok:1.18.30')
+    compileOnly ('org.projectlombok:lombok:1.18.30')
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }
@@ -34,5 +37,7 @@ test {
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
+
+
 
 
