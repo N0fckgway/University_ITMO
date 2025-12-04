@@ -28,8 +28,6 @@ public class AreaCheckServlet extends HttpServlet {
             return;
         }
 
-        response.setContentType("text/html");
-
         String[] xValues = request.getParameterValues("x");
         String strY = request.getParameter("y");
         String strR = request.getParameter("r");
@@ -100,25 +98,36 @@ public class AreaCheckServlet extends HttpServlet {
         servletContext.setAttribute("results", results);
         servletContext.setAttribute("lastResult", newHits.get(newHits.size() - 1));
 
-        response.setContentType("application/json;charset=UTF-8");
-        StringBuilder json = new StringBuilder();
-        json.append("{\"hits\":[");
-        for (int i = 0; i < newHits.size(); i++) {
-            HitResult hr = newHits.get(i);
-            json.append("{")
-                    .append("\"x\":").append(hr.getX()).append(",")
-                    .append("\"y\":").append(hr.getY()).append(",")
-                    .append("\"r\":").append(hr.getR()).append(",")
-                    .append("\"hit\":").append(hr.isHit()).append(",")
-                    .append("\"nowTime\":\"").append(hr.getNowTime()).append("\",")
-                    .append("\"execTime\":").append(hr.getExecTime())
-                    .append("}");
-            if (i < newHits.size() - 1) {
-                json.append(",");
+        String acceptHeader = request.getHeader("Accept");
+        String requestedWith = request.getHeader("X-Requested-With");
+        boolean wantsJson = (acceptHeader != null && acceptHeader.toLowerCase().contains("application/json"))
+                || (requestedWith != null && "xmlhttprequest".equalsIgnoreCase(requestedWith));
+
+        if (wantsJson) {
+            response.setContentType("application/json");
+            StringBuilder json = new StringBuilder();
+            json.append("{\"hits\":[");
+            for (int i = 0; i < newHits.size(); i++) {
+                HitResult hr = newHits.get(i);
+                json.append("{")
+                        .append("\"x\":").append(hr.getX()).append(",")
+                        .append("\"y\":").append(hr.getY()).append(",")
+                        .append("\"r\":").append(hr.getR()).append(",")
+                        .append("\"hit\":").append(hr.isHit()).append(",")
+                        .append("\"nowTime\":\"").append(hr.getNowTime()).append("\",")
+                        .append("\"execTime\":").append(hr.getExecTime())
+                        .append("}");
+                if (i < newHits.size() - 1) {
+                    json.append(",");
+                }
             }
+            json.append("]}");
+            response.getWriter().write(json.toString());
+            return;
         }
-        json.append("]}");
-        response.getWriter().write(json.toString());
+
+        response.setContentType("text/html;charset=UTF-8");
+        request.getRequestDispatcher("/result.jsp").forward(request, response);
 
 
     }

@@ -282,6 +282,9 @@ async function sendDataToServer(x, y, r) {
 
     try {
         const resp = await fetch(`validationParam?${params.toString()}`, {
+            headers: {
+                Accept: 'application/json'
+            }
         });
         if (!resp.ok) {
             throw new Error(`HTTP error! status ${resp.status}`);
