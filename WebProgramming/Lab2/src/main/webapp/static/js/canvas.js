@@ -67,13 +67,6 @@ function scalePx(value) {
     return value * (canvasCfg.basisR / canvasCfg.r);
 }
 
-function toCanvasX(x) {
-    return canvas.width / 2 + scalePx(x);
-}
-
-function toCanvasY(y) {
-    return canvas.height / 2 - scalePx(y);
-}
 
 function drawBottomLeftShape() {
     ctx.save()
@@ -259,7 +252,6 @@ canvas.addEventListener("click", onClickCanvas)
 function onClickCanvas(event) {
     const rect = canvas.getBoundingClientRect();
 
-    // Учитываем масштаб CSS vs реальный размер canvas
     const scaleX = canvas.width / rect.width;
     const scaleY = canvas.height / rect.height;
     const pixelX = (event.clientX - rect.left) * scaleX;
