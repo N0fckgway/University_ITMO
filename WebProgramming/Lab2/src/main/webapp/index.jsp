@@ -53,29 +53,41 @@
                         <th>Exec. time</th>
                     </tr>
                     </thead>
+                    <tbody id="table-results">
+                    <c:forEach var="res" items="${results}">
+                        <tr>
+                            <td>${res.x}</td>
+                            <td>${res.y}</td>
+                            <td>${res.r}</td>
+                            <td class="hit ${res.hit ? 'yes' : 'no'}">${res.hit}</td>
+                            <td>${res.nowTime}</td>
+                            <td>${res.execTime}</td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
                 </table>
             </div>
             <div class="table-footer">
-                <div class="page-block">
-                    <p class="label">Страница</p>
-                    <div class="pager-inline">
-                        <button class="circle-btn ghost-btn">←</button>
-                        <div class="page-indicator">
-                            <span class="page-number">1</span>
+                    <div class="page-block">
+                        <p class="label">Страница</p>
+                        <div class="pager-inline">
+                            <button class="circle-btn ghost-btn" id="prev-page">←</button>
+                            <div class="page-indicator">
+                                <span class="page-number" id="page-number">1</span>
+                            </div>
+                            <button class="circle-btn ghost-btn" id="next-page">→</button>
                         </div>
-                        <button class="circle-btn ghost-btn">→</button>
                     </div>
-                </div>
                 <div class="select-row">
                     <div class="page-size">
                         <label class="label" for="page-size">Размер таблицы</label>
                         <select id="page-size">
                             <option>5</option>
-                            <option>10</option>
+                            <option selected>10</option>
                             <option>15</option>
                         </select>
                     </div>
-                    <button class="btn btn-ghost">Очистить таблицу</button>
+                    <button class="btn btn-ghost" id="clear-button" name="action" value="clear">Очистить таблицу</button>
                 </div>
             </div>
         </section>
@@ -118,14 +130,14 @@
             </div>
             <div class="input-block">
                 <label for="y-input" class="label">Y:</label>
-                <input name="y" type="text" id="y-input" class="text-input" placeholder="Введите значение" value="1">
+                <input name="y" type="text" id="y-input" class="text-input" placeholder="Введите значение: " value="1">
                 <p class="err" id="y-err"></p>
             </div>
             <div class="input-block slider-block">
                 <label for="r-select" class="label">R:</label>
                 <select name="r" id="r-select">
-                    <option value="1" selected>1</option>
-                    <option value="2">2</option>
+                    <option value="1">1</option>
+                    <option value="2" selected>2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
@@ -138,5 +150,6 @@
 </div>
 <script src="static/js/canvas.js"></script>
 <script src="static/js/validation.js"></script>
+<script src="static/js/technicalButtons.js"></script>
 </body>
 </html>

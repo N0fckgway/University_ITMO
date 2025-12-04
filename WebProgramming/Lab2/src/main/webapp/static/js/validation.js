@@ -33,7 +33,7 @@ function validateY(fullCheck = true) {
 
     const value = parseFloat(y);
 
-    if (isNaN(value) || value < -3 || value > 5) {
+    if (isNaN(value) || value < -5 || value > 3) {
         showYError("Пожалуйста введите в поле Y валидные данные!");
         return false;
     }
@@ -66,8 +66,15 @@ function checkSubmitForm() {
         const okX = validateX();
         if (!okY || !okX) {
             event.preventDefault();
+            return;
         }
 
+        const xs = Array.from(document.querySelectorAll('input[name="x"]:checked')).map((i) => i.value);
+        const yVal = parseFloat(yInput.value.replace(',', '.'));
+        const rVal = parseFloat(document.getElementById('r-select')?.value || '0');
+        if (!Number.isNaN(yVal) && !Number.isNaN(rVal) && typeof addSelectedPointsToCanvas === 'function') {
+            addSelectedPointsToCanvas(xs, yVal, rVal);
+        }
     });
 
     yInput.addEventListener('input', () => {
@@ -89,4 +96,3 @@ xContainer.addEventListener('change', (event) => {
         validateX();
     }
 });
-

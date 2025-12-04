@@ -9,9 +9,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-import javax.swing.*;
 import java.io.IOException;
-import java.io.PrintWriter;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,15 +18,24 @@ import java.util.List;
 public class AreaCheckServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
+
+        String action = request.getParameter("action");
+        if ("clear".equals(action)) {
+            ServletContext context = getServletContext();
+            response.setContentType("text/plain;charset=UTF-8");
+            context.removeAttribute("results");
+            return;
+        }
+
+        response.setContentType("text/html");
 
         String[] xValues = request.getParameterValues("x");
         String strY = request.getParameter("y");
         String strR = request.getParameter("r");
 
         if (xValues == null || xValues.length == 0) {
-            request.setAttribute("error", "Нужно выбрать хотя бы одно значение X");
+            request.setAttribute("xError", "Нужно выбрать хотя бы одно значение X");
             request.getRequestDispatcher("/index.jsp").forward(request, response);
             return;
         }
@@ -40,7 +48,7 @@ public class AreaCheckServlet extends HttpServlet {
             r = Double.parseDouble(strR);
 
         } catch (NumberFormatException e) {
-            request.setAttribute("error", "Некорректно введенные параметры!");
+            request.setAttribute("yError", "Некорректно введенные параметры!");
             request.getRequestDispatcher("/index.jsp").forward(request, response);
             return;
         }
@@ -52,7 +60,7 @@ public class AreaCheckServlet extends HttpServlet {
             try {
                 x = Double.parseDouble(xValue);
             } catch (NumberFormatException e) {
-                request.setAttribute("error", "Некорректно введенные параметры!");
+                request.setAttribute("xError", "Некорректно введенные параметры!");
                 request.getRequestDispatcher("/index.jsp").forward(request, response);
                 return;
             }
@@ -76,12 +84,6 @@ public class AreaCheckServlet extends HttpServlet {
             newHits.add(new HitResult(x, y, r, hit, LocalDateTime.now(), end - start));
         }
 
-        try (PrintWriter out = response.getWriter()) {
-            out.println("<!DOCTYPE html><html><body>");
-            out.printf("<p>Параметры:" + newHits.get(0).toJson());
-            out.println("</body></html>");
-        }
-
 
 
         ServletContext servletContext = request.getServletContext();
@@ -95,10 +97,32 @@ public class AreaCheckServlet extends HttpServlet {
         }
 
         results.addAll(newHits);
-        request.setAttribute("currentResult", newHits.isEmpty() ? null : newHits.get(newHits.size() - 1));
-        request.setAttribute("results", results);
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
+        servletContext.setAttribute("results", results);
+        servletContext.setAttribute("lastResult", newHits.get(newHits.size() - 1));
+
+        response.setContentType("application/json;charset=UTF-8");
+        StringBuilder json = new StringBuilder();
+        json.append("{\"hits\":[");
+        for (int i = 0; i < newHits.size(); i++) {
+            HitResult hr = newHits.get(i);
+            json.append("{")
+                    .append("\"x\":").append(hr.getX()).append(",")
+                    .append("\"y\":").append(hr.getY()).append(",")
+                    .append("\"r\":").append(hr.getR()).append(",")
+                    .append("\"hit\":").append(hr.isHit()).append(",")
+                    .append("\"nowTime\":\"").append(hr.getNowTime()).append("\",")
+                    .append("\"execTime\":").append(hr.getExecTime())
+                    .append("}");
+            if (i < newHits.size() - 1) {
+                json.append(",");
+            }
+        }
+        json.append("]}");
+        response.getWriter().write(json.toString());
+
 
     }
+
+
 
 }

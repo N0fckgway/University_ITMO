@@ -15,6 +15,12 @@ public class ControllerServlet extends HttpServlet {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
 
+        String action = request.getParameter("action");
+        if ("clear".equals(action)) {
+            request.getRequestDispatcher("/areaCheck?action=clear").forward(request, response);
+            return;
+        }
+
 
         String x = request.getParameter("x");
         String y = request.getParameter("y");
@@ -24,13 +30,6 @@ public class ControllerServlet extends HttpServlet {
             request.getRequestDispatcher("/index.jsp").forward(request, response);
             return;
         } else request.getRequestDispatcher("/areaCheck").forward(request, response);
-
-
-        try (PrintWriter out = response.getWriter()) {
-            out.println("<!DOCTYPE html><html><body>");
-            out.printf("<p>Параметры: x=%s, y=%s, r=%s</p>%n", x, y, r);
-            out.println("</body></html>");
-        }
 
 
     }
