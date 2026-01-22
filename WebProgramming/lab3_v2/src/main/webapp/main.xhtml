@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Lab-3</title>
+    <h:outputStylesheet library="css" name="app.css"/>
+    <h:outputScript library="js" name="canvas.js" defer="defer"/>
+</h:head>
+<h:body>
+    <div class="app-shell">
+        <div class="system-bar">
+            <span class="dot"/>
+            <span class="dot"/>
+            <span class="dot"/>
+            <span>Web-3</span>
+        </div>
+
+        <header class="lab-header">
+            <div>
+                <p class="eyebrow">Лабораторная работа №3</p>
+                <h1>Проверка попадания точки в область</h1>
+                <div class="meta">Суворов Станислав Денисович · Группа P3215 · Вариант: 28078</div>
+            </div>
+            <h:link outcome="toIndex" value="Назад" styleClass="btn btn-ghost"/>
+        </header>
+        <div class="layout-grid">
+        <section class="card graph-card">
+            <div class="card-heading">
+                <span>График</span>
+                <span>R задает масштаб</span>
+            </div>
+            <h:form id="graphForm">
+                <div class="graph-wrapper" id="graphWrapper">
+                    <h:panelGroup id="graphBlock">
+                        <canvas id="graph" width="320" height="320"/>
+                        <h:outputText id="pointsData"
+                                      value="#{graphBean.pointsJson}"
+                                      styleClass="points-data"/>
+                    </h:panelGroup>
+                </div>
+                <h:inputHidden id="clickX" value="#{pointBean.x}">
+                    <f:convertNumber locale="us"/>
+                </h:inputHidden>
+                <h:inputHidden id="clickY" value="#{pointBean.y}">
+                    <f:convertNumber locale="us"/>
+                </h:inputHidden>
+                <h:inputHidden id="clickR" value="#{pointBean.r}">
+                    <f:convertNumber locale="us"/>
+                </h:inputHidden>
+                <h:commandButton id="submitCanvasButton"
+                                 action="#{pointBean.submit}"
+                                 style="display:none">
+                    <f:ajax execute="@form"
+                            render=":resultsForm:resultsTable :graphForm:graphBlock :graphForm:clickR :inputForm:messages"
+                            onevent="onAjaxEvent"/>
+                </h:commandButton>
+                <h:commandButton id="fullSubmitButton"
+                                 action="#{pointBean.submit}"
+                                 style="display:none"/>
+            </h:form>
+        </section>
+
+        <section class="card table-card">
+            <div class="card-heading">
+                <span>История проверок</span>
+                <span>История текущей сессии</span>
+            </div>
+            <h:form id="resultsForm">
+                <div class="table-wrapper">
+                    <p:dataTable id="resultsTable" value="#{resultsBean.results}" var="row"
+                                 emptyMessage="Пока нет результатов">
+                        <p:column headerText="X">
+                            <h:outputText value="#{row.x}"/>
+                        </p:column>
+                        <p:column headerText="Y">
+                            <h:outputText value="#{row.y}"/>
+                        </p:column>
+                        <p:column headerText="R">
+                            <h:outputText value="#{row.r}"/>
+                        </p:column>
+                        <p:column headerText="Результат">
+                            <h:outputText value="#{row.hit}"
+                                          styleClass="#{row.hit ? 'hit yes' : 'hit no'}"/>
+                        </p:column>
+                        <p:column headerText="Время">
+                            <h:outputText value="#{row.createdAtFormatted}"/>
+                        </p:column>
+                    </p:dataTable>
+                </div>
+                <div class="table-footer">
+                    <p:commandButton value="Очистить таблицу"
+                                     action="#{resultsBean.clear}"
+                                     process="@this"
+                                     update="resultsTable :graphForm:graphBlock"
+                                     oncomplete="drawGraph();"
+                                     styleClass="btn btn-ghost full-width"/>
+                </div>
+            </h:form>
+        </section>
+
+        <section class="card input-card">
+            <h2>Параметры точки</h2>
+            <h:form id="inputForm">
+                <div class="input-block">
+                    <p class="label">X</p>
+                    <h:inputHidden id="xValues" value="#{pointBean.XValues}"/>
+                    <div class="pill-group" data-target="inputForm:xValues" data-multi="true">
+                        <button type="button" class="pill" data-value="-3">-3</button>
+                        <button type="button" class="pill" data-value="-2">-2</button>
+                        <button type="button" class="pill" data-value="-1">-1</button>
+                        <button type="button" class="pill" data-value="0">0</button>
+                        <button type="button" class="pill" data-value="1">1</button>
+                        <button type="button" class="pill" data-value="2">2</button>
+                        <button type="button" class="pill" data-value="3">3</button>
+                    </div>
+                </div>
+
+                <div class="input-block">
+                    <p class="label">Y</p>
+                    <h:inputText id="y" value="#{pointBean.y}" required="true"
+                                 requiredMessage="Введите Y."
+                                 converterMessage="Y должен быть числом."
+                                 validatorMessage="Введите Y от -5 до 5 (включительно)."
+                                 styleClass="text-input">
+                        <f:validateDoubleRange minimum="-5" maximum="5"/>
+                    </h:inputText>
+                </div>
+
+                <div class="input-block">
+                    <p class="label">R</p>
+                    <h:inputHidden id="r" value="#{pointBean.r}">
+                        <f:convertNumber locale="en"/>
+                    </h:inputHidden>
+                    <div class="pill-group"
+                         data-target="inputForm:r"
+                         data-sync="graphForm:clickR"
+                         data-default="2"
+                         data-onchange="drawGraph">
+                        <button type="button" class="pill" data-value="1">1</button>
+                        <button type="button" class="pill" data-value="2">2</button>
+                        <button type="button" class="pill" data-value="3">3</button>
+                        <button type="button" class="pill" data-value="4">4</button>
+                        <button type="button" class="pill" data-value="5">5</button>
+                    </div>
+                </div>
+
+                <h:messages id="messages" styleClass="err show"/>
+
+                <p:commandButton value="Проверить"
+                                 styleClass="btn btn-primary full-width"
+                                 action="#{pointBean.submit}"
+                                 process="@form"
+                                 update=":resultsForm:resultsTable :graphForm:graphBlock :graphForm:clickR :inputForm:messages"
+                                 oncomplete="drawGraph();"/>
+            </h:form>
+        </section>
+    </div>
+    </div>
+</h:body>
+
+</html>

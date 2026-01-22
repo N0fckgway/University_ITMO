@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Lab-3</title>
+    <h:outputStylesheet library="css" name="app.css"/>
+    <h:outputScript library="js" name="clock.js" target="body"/>
+</h:head>
+
+<h:body>
+        <div class="app-shell">
+            <div class="system-bar">
+                <span class="dot"/>
+                <span class="dot"/>
+                <span class="dot"/>
+            </div>
+            <header class="lab-header">
+                <div>
+                    <p class="eyebrow">Лабораторная работа №3</p>
+                    <h1>Проверка попадания точки в область</h1>
+                    <div class="meta">Суворов Станислав Денисович · Группа P3215 · Вариант: 28078</div>
+                </div>
+                <h:link outcome="toMain" value="Скачать Clash Royale мод на гемы бесплатно без смс и регистраций!" styleClass="btn btn-ghost"/>
+            </header>
+
+            <section class="card clock-card">
+                <div class="clock-title">Интерактивные часы</div>
+                <h:form id="clockForm">
+                    <h:panelGroup id="clockBox" layout="block">
+                        <div class="clock-face">
+                            <div class="analog-clock">
+                                <div class="dial">
+                                    <span class="mark mark-12">12</span>
+                                    <span class="mark mark-3">3</span>
+                                    <span class="mark mark-6">6</span>
+                                    <span class="mark mark-9">9</span>
+                                    <div class="hand hour" id="hourHand"></div>
+                                    <div class="hand minute" id="minuteHand"></div>
+                                    <div class="hand second" id="secondHand"></div>
+                                    <div class="center-dot"></div>
+                                </div>
+                            </div>
+                            <div class="clock-readout">
+                                <span id="timeValue" class="clock-time">
+                                    <h:outputText value="#{clockBean.time}"/>
+                                </span>
+                                <span id="dateValue" class="clock-date">
+                                    <h:outputText value="#{clockBean.date}"/>
+                                </span>
+                            </div>
+                                <span id="serverTime" class="clock-hidden">
+                                    <h:outputText value="#{clockBean.now}"/>
+                                </span>
+                            </div>
+                        </h:panelGroup>
+                    <p:poll interval="8" update="clockBox"/>
+                </h:form>
+            </section>
+
+        </div>
+</h:body>
+</html>
