@@ -1,7 +1,7 @@
 import React from "react";
-import {AnimationLogo} from "../atoms/Logo";
-import BasicButton from "../atoms/Button";
-import styles from "./css/StartMainInfo.module.scss";
+import {AnimationLogo} from "../../atoms/Logo";
+import BasicButton from "../../atoms/Button";
+import styles from "../css/StartMainInfo.module.scss";
 
 function StartMainInfo() {
     return (

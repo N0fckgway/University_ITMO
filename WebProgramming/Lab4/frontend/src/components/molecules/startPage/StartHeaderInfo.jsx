@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./css/HeaderInfo.module.scss";
+import styles from "../css/HeaderInfo.module.scss";
 
 function StartHeaderInfo({name, group, variant}) {
     return (

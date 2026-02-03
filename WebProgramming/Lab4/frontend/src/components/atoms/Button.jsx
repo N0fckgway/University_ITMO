@@ -1,8 +1,10 @@
 import {Button as BelleButton} from 'belle'
+import React from "react";
+
 
 function BasicButton(props) {
     return (
-        <BelleButton{...props}></BelleButton>
+        <BelleButton type={'button'} {...props}></BelleButton>
     );
 }
 

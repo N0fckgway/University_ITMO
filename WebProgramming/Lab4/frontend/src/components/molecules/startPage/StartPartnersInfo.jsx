@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./css/StartPartnersInfo.module.scss";
+import styles from "../css/StartPartnersInfo.module.scss";
 import { Claude, Copilot, DeepSeek, Gemini, OpenAI } from "@lobehub/icons";
 
 export const teams = [
