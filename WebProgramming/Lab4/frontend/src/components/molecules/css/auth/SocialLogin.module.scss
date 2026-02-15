@@ -1,0 +1,66 @@
+.socialLogin {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+
+
+.neuSocial {
+  width: 50px;
+  height: 50px;
+  background: #e0e5ec !important;
+  border: none !important;
+  border-radius: 15px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #6c7293 !important;
+  box-shadow:
+          6px 6px 15px #bec3cf,
+          -6px -6px 15px #ffffff !important;
+  transition: all 0.3s ease !important;
+}
+
+.socialIcon {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+
+.neuSocial:hover {
+  transform: translateY(-2px);
+  box-shadow:
+          8px 8px 20px #bec3cf,
+          -8px -8px 20px #ffffff;
+}
+
+.neuSocial:active {
+  transform: translateY(0);
+  box-shadow:
+          inset 3px 3px 8px #bec3cf,
+          inset -3px -3px 8px #ffffff;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+  gap: 16px;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #bec3cf, transparent);
+}
+
+.divider span {
+  color: #9499b7;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

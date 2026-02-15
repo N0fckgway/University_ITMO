@@ -1,9 +1,8 @@
 import React from "react";
-import style from '/css/Labels.module.scss'
 
 function Label(props) {
     return (
-        <label {...props}></label>
+        <label htmlFor={props.htmlFor} {...props}></label>
     );
 }
 

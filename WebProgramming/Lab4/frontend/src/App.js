@@ -1,12 +1,11 @@
 import './App.css';
-import StartHeader from "./components/organisms/StartHeader";
-import StartMain from "./components/organisms/StartMain";
+import StartRoutesConfig from "./components/routesConfig/StartRoutesConfig";
 
 function App() {
+
   return (
     <div className="App">
-      <StartHeader></StartHeader>
-      <StartMain></StartMain>
+        <StartRoutesConfig/>
     </div>
   );
 }

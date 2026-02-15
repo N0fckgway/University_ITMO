@@ -1,0 +1,47 @@
+.successMessage {
+  display: none;
+  text-align: center;
+  padding: 18px 16px;
+  border-radius: 14px;
+  border: 1.5px solid #68d391;
+  background: linear-gradient(180deg, #f2fff7 0%, #e9ffef 100%);
+  box-shadow: 0 8px 22px rgba(32, 154, 76, 0.18);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #1f9d4c;
+  background: #ffffff;
+  border: 1px solid #8ae3ac;
+  box-shadow: 0 6px 14px rgba(31, 157, 76, 0.2);
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.successMessage h3 {
+  color: #1f7a3f;
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.successMessage p {
+  color: #2f6b45;
+  font-size: 14px;
+}

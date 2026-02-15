@@ -1,0 +1,211 @@
+.main {
+  min-height: unset;
+  display: flex;
+  position: relative;
+  top: 125px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 60px 20px 40px;
+  text-align: center;
+  background: #ffffff;
+  color: #15141a;
+  font-family: "Sora", "Space Grotesk", sans-serif;
+  opacity: 0;
+  animation: ani 2.5s forwards;
+}
+
+@keyframes ani {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.logoWrap {
+  width: min(620px, 90vw);
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.title {
+  margin: 10px 0 0;
+  font-size: clamp(32px, 5vw, 64px);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  max-width: 615px;
+  margin: 0;
+  font-size: clamp(16px, 2.2vw, 20px);
+  line-height: 1.5;
+  color: #6a6a72;
+}
+
+.actions {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.button {
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.primary {
+  border: none !important;
+  color: #ffffff !important;
+  background-color: black !important;
+  border-radius: 100px !important;
+  max-width: 88px;
+  height: 44px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease !important;
+
+
+}
+
+.ghost {
+    background: #ffffff !important;
+    color: var(--ink) !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    padding: 8px 18px !important;
+    border-radius: 100px !important;
+    box-shadow:
+            inset 0 0 0 2px #2c2c33,
+            0 8px 20px rgba(35, 24, 64, 0.12) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    cursor: pointer !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease !important;
+}
+
+.button:hover {
+  transform: translateY(-1px) !important;
+}
+
+.button:active {
+  transform: translateY(0) !important;
+  opacity: 0.85 !important;
+}
+
+@media (max-width: 1171px) {
+  .main {
+    top: 80px;
+    padding: 40px 18px 30px;
+  }
+}
+
+@media (max-width: 813px) {
+  .main {
+    top: 40px;
+    padding: 24px 16px 40px;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal {
+  position: relative;
+  max-width: min(720px, 92vw);
+  width: 100%;
+  border-radius: 12px;
+  padding: 12px;
+  background: #ffffff;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+  transform: translateY(10px);
+  transition: transform 0.2s ease;
+}
+
+.overlay.show {
+  opacity: 1;
+  visibility: visible;
+  animation: overlayFade 3s ease;
+}
+
+
+
+.modalImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.closeButton {
+  position: absolute !important;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50% !important;
+  border: 0 !important;
+  background: rgba(0, 0, 0, 0.7) !important;
+  color: #ffffff !important;
+  font-size: 20px;
+  line-height: 1 !important;
+  cursor: pointer;
+  display: grid !important;
+  place-items: center !important;
+  transition: opacity 0.15s ease !important;
+  &:hover {
+    opacity: 0.85;
+  }
+}
+
+@keyframes overlayFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalIn {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

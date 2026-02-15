@@ -1,12 +1,9 @@
 .App {
   text-align: center;
-  background: #ffffff;
   min-height: 100vh;
-  max-height: 1000px;
 }
 
 .App-header {
-  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

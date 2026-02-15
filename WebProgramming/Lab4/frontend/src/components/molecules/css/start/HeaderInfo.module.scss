@@ -1,0 +1,51 @@
+.info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #6a6a72;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  white-space: nowrap;
+}
+
+.name {
+  color: #000000;
+  font-weight: 600;
+}
+
+.divider {
+  color: #b8b8bf;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.label {
+  color: #7a7a84;
+  font-weight: 500;
+}
+
+.value {
+  color: #000000;
+  font-weight: 600;
+}
+
+@media (max-width: 1171px) {
+  .info {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 813px) {
+  .info {
+    font-size: 13px;
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+}

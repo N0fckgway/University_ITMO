@@ -1,11 +1,10 @@
-import { TextInput as InputBelle } from "belle";
 import React from "react";
+import {TextInput} from "belle";
 
-
-function TextInput(props) {
+function Input(props) {
     return (
-        <InputBelle type='text' {...props}/>
+        <TextInput type='text' {...props}/>
     );
 }
 
-export default TextInput
+export default Input

@@ -1,0 +1,62 @@
+.loginHeader {
+  text-align: center;
+  margin-bottom: 40px;
+
+}
+
+.loginHeader h2 {
+  color: #3d4468;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.loginHeader p {
+  color: #9499b7;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.neuIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  background: #e0e5ec;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+          8px 8px 20px #bec3cf,
+          -8px -8px 20px #ffffff,
+          inset 0 0 0 #bec3cf,
+          inset 0 0 0 #ffffff;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.neuIcon:hover {
+  box-shadow:
+          4px 4px 10px #bec3cf,
+          -4px -4px 10px #ffffff,
+          inset 4px 4px 10px #bec3cf,
+          inset -4px -4px 10px #ffffff;
+}
+
+.iconInner {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c7293;
+
+}
+
+.iconInner svg {
+  width: 100%;
+  height: 100%;
+}
+
+
+

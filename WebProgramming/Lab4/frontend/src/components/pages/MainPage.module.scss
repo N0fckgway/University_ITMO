@@ -1,0 +1,214 @@
+.main {
+  min-height: 100vh;
+  padding: 22px;
+  background: radial-gradient(circle at 20% 10%, #f4f6fb 0%, #eceff5 45%, #dfe4ed 100%);
+  display: grid;
+  gap: 18px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.title {
+  margin: 0;
+  font-size: 30px;
+  color: #1d2430;
+}
+
+.logoutButton {
+  padding: 10px 18px !important;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1.2fr;
+  gap: 18px;
+}
+
+.panel {
+  background: rgba(245, 247, 251, 0.9);
+  border: 1px solid rgba(34, 44, 62, 0.14);
+  border-radius: 24px;
+  padding: 16px;
+  box-shadow: 0 14px 30px rgba(34, 44, 62, 0.12);
+}
+
+.panelTitle {
+  margin: 0 0 10px;
+  color: #1e293b;
+  font-size: 20px;
+}
+
+.historyHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.clearButton {
+  padding: 8px 12px !important;
+  min-width: 130px !important;
+}
+
+.form {
+  display: grid;
+  gap: 12px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.buttonGrid {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.pickButton {
+  padding: 8px !important;
+  min-width: 0 !important;
+}
+
+.pickButtonActive {
+  outline: 2px solid #2f6fca;
+}
+
+.submitButton {
+  padding: 11px 16px !important;
+}
+
+.errorText {
+  margin: 0;
+  color: #b42318;
+  font-size: 13px;
+}
+
+.graph {
+  width: 100%;
+  max-width: 560px;
+  border-radius: 28px;
+  border: 1px solid rgba(31, 41, 55, 0.24);
+  cursor: crosshair;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+}
+
+.graphBase {
+  fill: #dbdde2;
+}
+
+.gridLine {
+  fill: none;
+  stroke: rgba(93, 104, 125, 0.24);
+  stroke-width: 1;
+}
+
+.area {
+  fill: rgba(236, 167, 146, 0.58);
+}
+
+.axis {
+  stroke: #555f70;
+  stroke-width: 2.2;
+}
+
+.axisArrow {
+  fill: #555f70;
+}
+
+.axisLabel {
+  font-size: 18px;
+  font-weight: 700;
+  fill: #3e4758;
+}
+
+.tick {
+  stroke: #5d6577;
+  stroke-width: 2;
+}
+
+.tickLabel {
+  fill: #465064;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hitPoint {
+  fill: #21bd66;
+  stroke: #d8ffe9;
+  stroke-width: 1.4;
+}
+
+.missPoint {
+  fill: #df4a4a;
+  stroke: #ffe3e3;
+  stroke-width: 1.2;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #f7f9fc;
+}
+
+.table th,
+.table td {
+  border: 1px solid #c6cfdd;
+  padding: 8px 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.table th {
+  background: #e9edf5;
+}
+
+@media (max-width: 1171px) {
+  .main {
+    padding: 16px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .graph {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 813px) {
+  .main {
+    padding: 10px;
+    gap: 12px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .panel {
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .historyHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .buttonGrid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}

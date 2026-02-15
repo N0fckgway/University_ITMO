@@ -3,6 +3,12 @@ plugins {
     id 'war'
 }
 
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
 group 'dev.n0fckgway.lab4'
 
 
@@ -14,8 +20,8 @@ ext {
     junitVersion = '5.11.0'
 }
 
-sourceCompatibility = '22'
-targetCompatibility = '22'
+sourceCompatibility = '17'
+targetCompatibility = '17'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
