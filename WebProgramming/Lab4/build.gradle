@@ -3,33 +3,35 @@ plugins {
     id 'war'
 }
 
+group = 'dev.n0fckgway.lab4'
+version = appVersion
 
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
     }
 }
-group 'dev.n0fckgway.lab4'
-
 
 repositories {
     mavenCentral()
 }
 
 ext {
-    junitVersion = '5.11.0'
+    junitVersion = findProperty('junitVersion') ?: '5.11.0'
+    npmExecutable = findProperty('npmExecutable') ?: '/opt/homebrew/bin/npm'
 }
 
-sourceCompatibility = '17'
-targetCompatibility = '17'
-
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
+}
+
+tasks.register('compile') {
+    dependsOn ':backend:classes'
 }
 
 tasks.register('buildFrontendVite', Exec) {
     workingDir 'frontend'
-    commandLine '/opt/homebrew/bin/npm', 'run', 'build'
+    commandLine npmExecutable, 'run', 'build'
 }
 
 dependencies {
@@ -53,13 +55,158 @@ dependencies {
 }
 
 war {
+    archiveFileName = "${appName}.war"
+
     from fileTree('./frontend/build') {
         into '/'
+    }
+
+    manifest {
+        attributes(
+                'Implementation-Version': project.version,
+                'Main-Class': mainClass
+        )
     }
 
     dependsOn 'buildFrontendVite'
 }
 
+def checkedFiles = fileTree(projectDir) {
+    include 'build.gradle', 'settings.gradle', 'gradle.properties'
+    include 'backend/src/main/**'
+    include 'frontend/src/**', 'frontend/public/**'
+}
+
+tasks.register('generateManifestChecksums') {
+    outputs.file layout.buildDirectory.file('checksums/MANIFEST.MF')
+
+    doLast {
+        def outputFile = outputs.files.singleFile
+        outputFile.parentFile.mkdirs()
+        outputFile.text = ''
+
+        checkedFiles.files.findAll { it.isFile() }.sort().eachWithIndex { file, index ->
+            def md5Property = "md5.${index}"
+            def sha1Property = "sha1.${index}"
+            def relativePath = projectDir.toPath()
+                    .relativize(file.toPath())
+                    .toString()
+
+
+            ant.checksum(file: file, property: md5Property, algorithm: 'MD5')
+            ant.checksum(file: file, property: sha1Property, algorithm: 'SHA-1')
+
+            outputFile << "\nName: ${relativePath}\n"
+            outputFile << "MD5-Digest: ${ant.project.properties[md5Property]}\n"
+            outputFile << "SHA-1-Digest: ${ant.project.properties[sha1Property]}\n"
+        }
+    }
+}
+
+tasks.register('doc', War) {
+    archiveFileName = "${appName}-doc.war"
+
+    dependsOn 'war', ':backend:javadoc', 'generateManifestChecksums'
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    from { zipTree(tasks.war.archiveFile.get().asFile) }
+    from(project(':backend').layout.buildDirectory.dir('docs/javadoc')) {
+        into 'javadoc'
+    }
+
+    manifest {
+        attributes(
+                'Implementation-Version': project.version,
+                'Main-Class': mainClass
+        )
+        from "${buildDir}/checksums/MANIFEST.MF"
+    }
+}
+
 test {
+    dependsOn 'war'
     useJUnitPlatform()
+}
+
+clean {
+    delete './frontend/build'
+    delete './build/team'
+    delete './build/checksums'
+    delete './build/distributions'
+}
+
+def git = { List<String> args ->
+    def output = new ByteArrayOutputStream()
+    exec {
+        commandLine(['git'] + args)
+        standardOutput = output
+    }
+    output.toString('UTF-8').trim()
+}
+
+tasks.register('team') {
+
+    doLast {
+        def repositoryRoot = file(git(['rev-parse', '--show-toplevel']))
+        def projectPrefix = git(['rev-parse', '--show-prefix'])
+        def teamDir = file(teamWorkDir)
+        def artifactsDir = file("${teamWorkDir}/artifacts")
+        def archiveFile = file("${buildDir}/distributions/${teamArchiveName}")
+        def revisions = git(['rev-list', 'HEAD~1']).readLines()
+
+        delete teamDir
+        delete archiveFile
+
+        mkdir artifactsDir
+        mkdir archiveFile.parentFile
+
+        revisions.each { revision ->
+            def shortRevision = revision.take(7)
+            def worktreeDir = file("${teamWorkDir}/worktrees/${shortRevision}")
+
+            exec {
+                workingDir repositoryRoot
+                commandLine 'git', 'worktree', 'add', '--detach', worktreeDir.absolutePath, revision
+            }
+
+            try {
+                def revisionProjectDir = projectPrefix ? new File(worktreeDir, projectPrefix) : worktreeDir
+                def revisionFrontendDir = new File(revisionProjectDir, 'frontend')
+
+                if (new File(revisionFrontendDir, 'package.json').isFile()) {
+                    exec {
+                        workingDir revisionFrontendDir
+                        commandLine npmExecutable, 'install'
+                    }
+                }
+
+                exec {
+                    workingDir revisionProjectDir
+                    commandLine './gradlew', 'build'
+
+                }
+
+                copy {
+                    from fileTree("${revisionProjectDir}/build/libs") {
+                        include '*.war'
+                    }
+                    into artifactsDir
+                    rename { "${appName}-${shortRevision}.war" }
+                }
+            } finally {
+                exec {
+                    workingDir repositoryRoot
+                    commandLine 'git', 'worktree', 'remove', '--force', worktreeDir.absolutePath
+                    ignoreExitValue = true
+                }
+            }
+        }
+
+        ant.zip(destfile: archiveFile.absolutePath, basedir: artifactsDir.absolutePath)
+    }
+}
+
+tasks.named('build') {
+    dependsOn 'compile'
 }
