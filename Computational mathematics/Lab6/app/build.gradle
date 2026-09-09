@@ -1,0 +1,42 @@
+plugins {
+    id 'war'
+}
+
+repositories { mavenCentral() }
+dependencies {
+    compileOnly 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+    testImplementation libs.junit.jupiter
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+def frontendDir = layout.projectDirectory.dir('../frontend')
+tasks.register('frontendInstall', Exec) {
+    workingDir frontendDir
+    commandLine 'npm', 'ci', '--no-audit', '--no-fund'
+    inputs.files(frontendDir.file('package.json'), frontendDir.file('package-lock.json'))
+    outputs.dir(frontendDir.dir('node_modules'))
+}
+tasks.register('frontendBuild', Exec) {
+    dependsOn 'frontendInstall'
+    workingDir frontendDir
+    commandLine 'npm', 'run', 'build'
+    inputs.dir(frontendDir.dir('src'))
+    inputs.files(frontendDir.file('index.html'), frontendDir.file('vite.config.js'), frontendDir.file('package-lock.json'))
+    outputs.dir(frontendDir.dir('dist'))
+}
+tasks.register('frontendTest', Exec) {
+    workingDir frontendDir
+    commandLine 'node', '--test', 'src/axis.test.js', 'src/zoom.test.js'
+}
+tasks.named('check') { dependsOn 'frontendTest' }
+tasks.named('war') {
+    dependsOn 'frontendBuild'
+    archiveFileName = 'lab6.war'
+    from(frontendDir.dir('dist'))
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 17
+    options.encoding = 'UTF-8'
+}
+tasks.named('test') { useJUnitPlatform() }
